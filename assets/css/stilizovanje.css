@@ -1,0 +1,532 @@
+/* Start whole document */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+:root{
+    --darkRed: #B52125;
+    --black: #333300;
+    --white: #F4F6F5;
+    --beige2:#d0a772;
+    --add: #FDB560;
+}
+html{
+    font-size: 1em;
+}
+body{
+    background-color: var(--white);
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+ul{
+    padding-left:1rem;
+}
+.modal ul {
+    padding-left: 2rem;
+}
+/* End whole document */
+/* Start header */
+header{
+    background-image: url('../images/bgCover3.jpg');
+    background-size: cover;
+    background-position: 0% 80%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 9px 11px 1px rgba(208, 167, 114,0.6);
+    z-index: 1;
+}
+header h1,header a{
+    font-family: 'Sansita', sans-serif;
+}
+nav .container-fluid > a{
+    filter: grayscale(0px);
+    transition: 0.4s;
+}
+nav .container-fluid > a:hover {
+    filter: grayscale(50%);
+    color: var(--darkRed);
+}
+header a img{
+    width:6.74rem;
+}
+.navbar{
+    padding: 0px;
+    width: 80%;
+} 
+.nav-item .nav-link{
+    border-radius: 0.5rem;
+}
+.nav-item .nav-link a{
+    height: inherit;
+}
+.bg-light-az{
+    background-color: var(--white);
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    cursor: pointer;
+    background-color: var(--darkRed);
+    color: var(--white)!important;
+}
+.navbar-light .navbar-nav .nav-link.active,.navbar-light .navbar-nav .nav-link.active:hover{
+    background-color: var(--darkRed);
+    color: var(--white)!important;
+}
+.navbar-toggler{
+    padding:0.5rem 1rem;
+}
+/* End header */
+/* Start slider   */
+.carousel {
+    height: 47rem;
+}
+.carousel-inner{
+    height: inherit;
+}
+.carousel-item img{
+    height: 47rem;
+    object-fit: cover;
+}
+main > #carouselSliderIndicators .carousel-indicators button{
+    background-image: url('../images/Logo.png');
+    background-size: 4.5rem 5.2rem;
+    width: 4.5rem !important;
+    height: 5.2rem !important;
+    background-color: transparent !important;
+}
+/* End slider  */
+/* Start main */
+#sefKuhinje::before,#Autor::before,#Kontakt::before,#uslugeStrana::before,#meniStrana::before{
+    position: absolute;
+    top: -8px;
+    left: -0.5px;
+    width: 100%;
+    content: '';
+    display: block;
+    height: 8px;
+    background: url(../images/miljeGornje2.png) repeat-x;
+}
+.az-mb-5{
+    margin-bottom: 5rem!important;
+}
+#sefKuhinje::after,#Autor::after,#uslugeStrana::after,#meniStrana::after{
+    content: "";
+    position: absolute;
+    width: 43%;
+    height: 63%;
+    background: var(--add);
+    right: 0;
+    bottom: 3rem;
+    border-radius: 5rem 0px 0px 5rem;
+}
+#Autor::after{
+    height: 50%;
+}
+.imgVelika{
+    right: 0;
+    z-index: 1;
+}
+.imgVelika img{
+    width:25rem;
+}
+.az-bg-red:hover,.az-bg-red:active,.az-bg-red:focus{
+    background-color: var(--darkRed);
+    color: var(--white);
+    border-color: var(--darkRed);
+}
+.az-bg-red:focus,.az-bg-red-2:focus{
+    box-shadow: 0 0 0 0.25rem rgb(234, 235, 236) !important;
+}
+.az-bg-red{
+    border:1px solid var(--darkRed);
+    background-color: var(--white);
+    color: var(--darkRed);
+    transition:0.2s;
+}
+.az-icon{
+    width: 4rem;
+    height: 4rem;
+    top: -1.5rem;
+    left: -1rem;
+}
+#Usluge{
+    background-image: url('../images/bgCover3.jpg');
+    background-size: cover;
+    background-position: 0% 80%;
+    background-repeat: no-repeat;
+}
+#Usluge h2,.card-body h4,h6,.az-red{
+    color: var(--darkRed)!important;
+}
+.az-bg-red-2{
+    background-color: rgba(181, 33, 37,0.92);
+    color: var(--white);
+    border-color: var(--darkRed);
+}
+.az-bg-red-2:hover,.az-bg-red-2:active,.az-bg-red-2:focus{
+    background-color: var(--darkRed);
+    border-color: var(--darkRed);
+}
+#Usluge .card::after{
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    width: 100%;
+    content: '';
+    display: block;
+    height: 8px;
+    background: url(../images/miljeDole.png) repeat-x;
+}
+#Usluge .tra-cover{
+    background-color: rgba(208, 167, 114,0.5);
+}
+.az-pad{
+    padding: 0px 17% 0px 17%;
+    font-size: 1.15rem!important;
+}
+.card-body .az-icon{
+    top: -2.5rem;
+    left: 75%;
+}
+.card-body .az-icon p{
+    margin-bottom: 0.1rem;
+}
+#Komentari .carousel-item img, #Komentari .carousel{
+    height: auto;
+}
+.az-opac{
+    opacity: 0.6;
+}
+/* End main */
+/* Start footer */
+footer ul{
+    list-style-type: none;
+}
+footer ul li a,footer ul li,footer span,footer p{
+    color: var(--white);
+    text-decoration: none;
+}
+footer ul li a:hover{
+    color: #ffc107;
+}
+footer hr{
+    background-color: var(--white);
+}
+.az-sm{
+    border: 1px solid var(--white);
+    width: 3rem;
+    height: 3rem;
+}
+.az-sm:hover{
+    background-color: #ffc107;
+    color: #212529;
+    border-color:#ffc107;
+}
+footer::before{
+    position: absolute;
+    top: -8px;
+    left: 0px;
+    width: 100%;
+    content: '';
+    display: block;
+    height: 8px;
+    background: url(../images/miljeGoreCrno.png) repeat-x;
+}
+/* End footer */
+
+/* Start autor */
+#naslovna,#citat{
+    background-image: url("../images/naslovnaSlika.jpg");
+    background-position: 0% 50%;
+    background-size: cover;
+}
+.naslovnaCrna{
+    background-color: rgba(33, 37, 41,0.66);
+    height: inherit;
+    width: 100%;
+}
+.naslovnaCrna h2,.breadcrumb li a{
+    color: var(--white);
+    transition: 0.3s color;
+}
+.breadcrumb li a:hover{
+    color: #ffc107;
+}
+.breadcrumb-item+.breadcrumb-item::before{
+    color:var(--white);
+}
+#Autor{
+    top: 0.5px;
+}
+#autorMreze ul li a{
+    color: var(--darkRed);
+}
+#autorMreze .az-sm{
+    border: 1px solid;
+}
+#autorMreze .az-sm:hover{
+    background-color: var(--darkRed);
+    color: var(--white);
+}
+/* End autor */
+/* Start kontakt i saveti */
+.form-control:focus{
+    border-color: rgba(181, 33, 37,0.45);
+    box-shadow: 0 0 0 0.25rem rgba(181, 33, 37,0.25);
+}
+#citat{
+    background-image: url("../images/citatSlika.jpg");
+    color: var(--white);
+}
+#citat i{
+    left: -1.4rem;
+    top: -1.4rem;
+}
+/* End kontakt i saveti */
+/* Start usluge */
+.az-z{
+    z-index: 1;
+}
+.az-beige{
+    color: var(--add);
+}
+/* End usluge */
+
+
+@media  screen and (max-width:1200px) {
+    footer li,footer span, footer p{
+        font-size: 0.90rem;
+    }
+    #citat i{
+        left: -1.3rem;
+    }
+    .az-box h5{
+        font-size:1.05rem;
+    }
+    .az-m{
+        font-size: 0.86rem!important;
+    }
+    .az-meni img{
+        width: 22.7rem;
+    }
+    #meniStrana::after{
+        width: 48%;
+    }
+    #meniStrana .az-mb-5{
+        margin-bottom: 2rem!important;
+    }
+}
+@media  screen and (max-width:1024px) {
+    html{
+        font-size: 0.9em;
+    }
+    header h1.fs-1{
+        font-size: 2rem !important;
+    }
+    .az-m{
+        font-size: 0.9rem!important;
+    }
+}
+@media  screen and (max-width:991px) {
+    .imgVelika img{
+        width: 21rem;
+    }
+    .az-meni img{
+        width: 19.3rem;
+    }
+    #meniStrana::after{
+        width: 50%;
+    }
+    #sefKuhinje::after{
+        width: 45%;
+    }
+    .az-mb-5{
+        margin-bottom: 0rem!important;
+    }
+    .az-pad{
+        padding: 0px 10% 0px 10%;
+    }
+    .card-body .row{
+        width: 67%!important;
+    }
+    .card-body .card-text.py-3{
+        margin-bottom: 0rem;
+        font-size: 0.9rem;
+    }
+    footer p{
+        text-align: center;
+    }
+    footer ul.row, footer h3,h3.text-start{
+        text-align: center!important;
+    }
+    footer .copy{
+        margin: 0px auto;
+        margin-bottom: 1rem;
+    }
+    #contact{
+        display: flex;
+        justify-content: space-between;
+    }
+    ul{
+        padding-left:0rem;
+    }
+    .az-box h5{
+        font-size:1rem;
+    }
+    .az-m{
+        font-size: 0.85rem!important;
+    }
+    #uslugeStrana::after{
+        width: 47%;
+        height: 57%;
+    }
+}
+@media  screen and (max-width:768px) {
+    html{
+        font-size: 0.8em;
+    }
+    header{
+        background-image: url(../images/bgCover4.jpg);
+    }
+    .carousel, .carousel-item img{
+        height: 50rem;
+    }
+    #sefKuhinje{
+        top: 1px;
+    }
+    footer li,footer span, footer p{
+        font-size: 1rem;
+    }
+}
+@media  screen and (max-width:767px) {
+    #sefKuhinje .row > div:nth-child(1),#Autor .row > div:nth-child(1),#uslugeStrana .row > div:nth-child(1),#meniStrana .row > div:nth-child(1){
+        margin-top: 3rem;
+        text-align: center;
+        align-items: center;
+    }
+    #sefKuhinje::after,#Autor::after,#meniStrana::after{
+        width: 63%;
+        height: 38%;
+        bottom: 3rem;
+    }
+    #Autor::after{
+        height: 33%;
+    }
+    #uslugeStrana::after{
+        width: 0%;
+        height: 0%;
+    }
+    #Vestine .text-end{
+        text-align: center!important;
+    }
+    .az-icon{
+        width: 5.2rem;
+        height: 5.2rem;
+        top: -2.5rem;
+        left: -2rem;
+    }
+    .card-body .card-text{
+        margin-bottom: 0.5rem;
+    }
+    .carousel-item img{
+        width: 50%;
+    }
+    footer li,footer span, footer p{
+        font-size: 0.93rem;
+    }
+    footer .container{
+        max-width: 90%;
+    }
+    .az-meni{
+        margin-top: 2rem;
+    }
+}
+@media screen and (max-width:660px){
+    #contact{
+        flex-direction: column;
+        text-align: center;
+    }
+    #autorMreze .w-75{
+        width: 85%!important;
+    }
+    #meniStrana::after{
+        width: 75%;
+    }
+    .az-meni img{
+        width: 22rem;
+    }
+}
+@media screen and (max-width:600px) {
+    main > #carouselSliderIndicators .carousel-indicators button{
+        background-size: 4rem 4.7rem;
+        width: 4rem !important;
+        height: 4.7rem !important;
+    }
+    #sefKuhinje::after{
+        width:73%;
+    }
+    .imgVelika img{
+        width:22rem;
+    }
+    .card-body .az-icon{
+        top: -3rem;
+    }
+    .card-body .row {
+        width: 75%!important;
+    }
+    #meniStrana::after{
+        width: 80%;
+    }
+
+}
+@media screen and (max-width:430px) {
+    html{
+        font-size: 0.7em;
+    }
+    .carousel,.carousel-item img {
+        height: 40rem;
+    }
+    .imgVelika img{
+        width:20rem;
+    }
+    #Autor::after{
+        height: 30%;
+    }
+    #Autor::after{
+        width: 70%;
+    }
+    #sefKuhinje::after{
+        width: 77%;
+    }
+    .card-body .row {
+        width: 100%!important;
+    }
+    #autorMreze .w-75{
+        width: 100%!important;
+    }
+}
+@media  screen and (max-width:350px) {
+    header a{
+        flex-direction: column;
+    }
+    #Autor::after{
+        width: 75%;
+    }
+    #meniStrana::after{
+        width: 88%;
+        height: 34%;
+    }
+    #meniStrana .imgVelika img{
+        width: 19rem;
+    }
+}
+@media  screen and (max-width:320px) {
+    #sefKuhinje::after{
+        width: 85%;
+    }
+    #Autor::after{
+        width: 82%;
+    }
+}
