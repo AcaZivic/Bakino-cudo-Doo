@@ -211,7 +211,7 @@ function slajderSlike(slajderObj,slajderAltSlike,slajderNizSlike){
         var divObj = document.createElement("div");
         divObj.classList.add('carousel-item');
         if (!i) {divObj.classList.add('az-visible')};
-        divObj.innerHTML =`<img src=${slajderNizSlike[i]} class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`;
+        divObj.innerHTML =`<img src='${slajderNizSlike[i]}' class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`;
         
         slajderObj.lastElementChild.appendChild(divObj);
         // console.log(slajderObj.lastElementChild)
