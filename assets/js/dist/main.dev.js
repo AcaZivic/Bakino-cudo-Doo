@@ -6,6 +6,7 @@ var prefiksDok = 'assets/doc/';
 var prefiksSlike = 'assets/images/';
 var prefiksPomocno = ''; //postaje ../
 
+var prefiksOnline = '/BakinoCudoDoo';
 var bodyTag = document.getElementsByTagName("body");
 var strelicaObj = document.querySelector("#strelicaPocetak");
 var navigacijaLink = document.querySelector("#navigacija");
@@ -23,8 +24,7 @@ console.log(url);
 window.onload = function () {
   //Konstante za navigacioni meni
   var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
-  var nizLinkovaStranica = ["/index.html", "".concat(prefiksPage, "usluge.html"), "".concat(prefiksPage, "meni.html"), "".concat(prefiksPage, "saveti.html"), "".concat(prefiksPage, "kontakt.html"), "".concat(prefiksPage, "autor.html")];
-  console.log("RADI");
+  var nizLinkovaStranica = ["".concat(prefiksOnline, "/index.html"), "".concat(prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksOnline + prefiksPage, "autor.html")];
 
   if (url == '/BakinoCudoDoo/index.html') {
     console.log("RADI"); //Konstante za slajeder
