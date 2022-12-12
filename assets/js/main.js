@@ -1,7 +1,7 @@
 //Zajednicke konstante
-var prefiksPage = '/pages/';
-var prefiksDok = '/assets/doc/';
-var prefiksSlike = '/assets/images/';
+var prefiksPage = 'pages/';
+var prefiksDok = 'assets/doc/';
+var prefiksSlike = 'assets/images/';
 var prefiksPomocno = ''; //postaje ../
 const bodyTag = document.getElementsByTagName("body");
 const strelicaObj = document.querySelector("#strelicaPocetak");
@@ -212,7 +212,7 @@ function slajderSlike(slajderObj,slajderAltSlike,slajderNizSlike){
         divObj.classList.add('carousel-item');
         if (!i) {divObj.classList.add('az-visible')};
         divObj.innerHTML =`<img src=${slajderNizSlike[i]} class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`;
-        console.log(`${slajderNizSlike[i]} class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`);
+        
         slajderObj.lastElementChild.appendChild(divObj);
         // console.log(slajderObj.lastElementChild)
         // console.log(divObj);
