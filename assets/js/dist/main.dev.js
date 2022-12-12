@@ -6,7 +6,7 @@ var prefiksDok = 'assets/doc/';
 var prefiksSlike = 'assets/images/';
 var prefiksPomocno = ''; //postaje ../
 
-var prefiksOnline = '/BakinoCudoDoo';
+var prefiksOnline = '/BakinoCudoDoo/';
 var bodyTag = document.getElementsByTagName("body");
 var strelicaObj = document.querySelector("#strelicaPocetak");
 var navigacijaLink = document.querySelector("#navigacija");
