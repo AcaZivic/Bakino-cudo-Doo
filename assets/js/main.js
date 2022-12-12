@@ -18,7 +18,7 @@ const footerIcons = document.querySelector("footer ul.d-flex");
 
 
 let url = window.location.pathname;
-url = (url=='/')?'/index.html':url;
+url = (url=='/BakinoCudoDoo/')?'/BakinoCudoDoo/index.html':url;
 
 window.onload = function(){
 
@@ -31,7 +31,7 @@ const nizLinkovaStranica = ["/index.html",`${prefiksPage}usluge.html`,`${prefiks
     
 
     
-    if(url=='/' || url=='/index.html'){
+    if(url=='/BakinoCudoDoo/index.html'){
         console.log("RADI");
         
 //Konstante za slajeder

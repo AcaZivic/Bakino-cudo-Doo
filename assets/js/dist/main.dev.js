@@ -17,14 +17,14 @@ var footerInfoFaIcons = ["phone", "envelope", "map-marker-alt"];
 var footerInfoTxt = ["&nbsp;&nbsp;063/710-5150", "&nbsp;&nbsp;aleksandar&#46;zivic&#46;7&#46;21&#64;ict&#46;edu&#46;rs", "&nbsp;&nbsp;Zdravka \u010Celara 16, Belgrade"];
 var footerIcons = document.querySelector("footer ul.d-flex");
 var url = window.location.pathname;
-url = url == '/' ? '/index.html' : url;
+url = url == '/BakinoCudoDoo/' ? '/BakinoCudoDoo/index.html' : url;
 
 window.onload = function () {
   //Konstante za navigacioni meni
   var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
   var nizLinkovaStranica = ["/index.html", "".concat(prefiksPage, "usluge.html"), "".concat(prefiksPage, "meni.html"), "".concat(prefiksPage, "saveti.html"), "".concat(prefiksPage, "kontakt.html"), "".concat(prefiksPage, "autor.html")];
 
-  if (url == '/' || url == '/index.html') {
+  if (url == '/BakinoCudoDoo/index.html') {
     console.log("RADI"); //Konstante za slajeder
 
     var slajderObj = document.querySelector("#carouselSliderIndicators");
