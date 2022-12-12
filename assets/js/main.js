@@ -32,6 +32,7 @@ const nizLinkovaStranica = ["/index.html",`${prefiksPage}usluge.html`,`${prefiks
 
     
     if(url=='/' || url=='/index.html'){
+        console.log("RADI");
         
 //Konstante za slajeder
 const slajderObj = document.querySelector("#carouselSliderIndicators");

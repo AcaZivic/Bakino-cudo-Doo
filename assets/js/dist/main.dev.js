@@ -25,7 +25,8 @@ window.onload = function () {
   var nizLinkovaStranica = ["/index.html", "".concat(prefiksPage, "usluge.html"), "".concat(prefiksPage, "meni.html"), "".concat(prefiksPage, "saveti.html"), "".concat(prefiksPage, "kontakt.html"), "".concat(prefiksPage, "autor.html")];
 
   if (url == '/' || url == '/index.html') {
-    //Konstante za slajeder
+    console.log("RADI"); //Konstante za slajeder
+
     var slajderObj = document.querySelector("#carouselSliderIndicators");
     var slajderNizSlike = ["".concat(prefiksSlike, "slanaJela.jpg"), "".concat(prefiksSlike, "cokolodnaTorta.jpg"), "".concat(prefiksSlike, "rakijaViseFlasa.jpg")];
     var slajderAltSlike = ['slano posluzenje', 'čokolodna torta', 'flaše rakije raznih ukusa']; //Konstante za prednostiBlok
