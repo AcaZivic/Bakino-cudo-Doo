@@ -23,9 +23,7 @@ url = (url=='/BakinoCudoDoo/')?'/BakinoCudoDoo/index.html':url;
 // console.log(url);
 window.onload = function(){
 
-//Konstante za navigacioni meni
-const nizStranica = ["Početna","Usluge","Meni","Saveti","Kontakt","O autoru"];
-const nizLinkovaStranica = [`${prefiksOnline}/index.html`,`${prefiksOnline+prefiksPage}usluge.html`,`${prefiksOnline+prefiksPage}meni.html`,`${prefiksOnline+prefiksPage}saveti.html`,`${prefiksOnline+prefiksPage}kontakt.html`,`${prefiksOnline+prefiksPage}autor.html`];
+
 
     
     if(url=='/BakinoCudoDoo/index.html'){
@@ -162,7 +160,9 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     footerIconObjects.push({link:`${prefiksDok}Dokumentacija (BakinoCudo).docx`,icon:`fa-solid fa-file`})
     footerIconObjects.push({link:`${prefiksPomocno}sitemap.xml`,icon:`fa-solid fa-sitemap`})
     footerIconObjects.push({link:`${prefiksPomocno}rss.xml`,icon:`fas fa-rss`})
-
+//Konstante za navigacioni meni
+    const nizStranica = ["Početna","Usluge","Meni","Saveti","Kontakt","O autoru"];
+    const nizLinkovaStranica = [`${prefiksPomocno+prefiksOnline}/index.html`,`${prefiksPomocno+prefiksOnline+prefiksPage}usluge.html`,`${prefiksPomocno+prefiksOnline+prefiksPage}meni.html`,`${prefiksPomocno+prefiksOnline+prefiksPage}saveti.html`,`${prefiksPomocno+prefiksOnline+prefiksPage}kontakt.html`,`${prefiksPomocno+prefiksOnline+prefiksPage}autor.html`];
     padajuciMeni();
     strelicaPrikaz();
     prikazNavigacije(nizStranica,nizLinkovaStranica);

@@ -21,10 +21,6 @@ var url = window.location.pathname;
 url = url == '/BakinoCudoDoo/' ? '/BakinoCudoDoo/index.html' : url; // console.log(url);
 
 window.onload = function () {
-  //Konstante za navigacioni meni
-  var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
-  var nizLinkovaStranica = ["".concat(prefiksOnline, "/index.html"), "".concat(prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksOnline + prefiksPage, "autor.html")];
-
   if (url == '/BakinoCudoDoo/index.html') {
     // console.log("RADI");
     //Konstante za slajeder
@@ -247,7 +243,10 @@ window.onload = function () {
   footerIconObjects.push({
     link: "".concat(prefiksPomocno, "rss.xml"),
     icon: "fas fa-rss"
-  });
+  }); //Konstante za navigacioni meni
+
+  var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
+  var nizLinkovaStranica = ["".concat(prefiksPomocno + prefiksOnline, "/index.html"), "".concat(prefiksPomocno + prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksPomocno + prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksPomocno + prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksPomocno + prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksPomocno + prefiksOnline + prefiksPage, "autor.html")];
   padajuciMeni();
   strelicaPrikaz();
   prikazNavigacije(nizStranica, nizLinkovaStranica);
