@@ -133,12 +133,12 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         ispisKomentara(komentariObj,nizKomentara);
         prikazForme(inputFormObjects,labelFormObjects);
     }else{
-
-    }
-    if(url=='/BakinoCudoDoo//pages/usluge.html'){
         prefiksPomocno = `../`;
         prefiksPage= `..`+prefiksPage;
         console.log(prefiksPage);
+    }
+    if(url=='/BakinoCudoDoo/pages/usluge.html'){
+        
     }
 
     if(url=='/pages/saveti.html'){

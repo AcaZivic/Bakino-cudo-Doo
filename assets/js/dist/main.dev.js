@@ -204,13 +204,13 @@ window.onload = function () {
     ispisSaveta(savetiObj, nizSaveta);
     ispisKomentara(komentariObj, nizKomentara);
     prikazForme(inputFormObjects, labelFormObjects);
-  } else {}
-
-  if (url == '/BakinoCudoDoo//pages/usluge.html') {
+  } else {
     prefiksPomocno = "../";
     prefiksPage = ".." + prefiksPage;
     console.log(prefiksPage);
   }
+
+  if (url == '/BakinoCudoDoo/pages/usluge.html') {}
 
   if (url == '/pages/saveti.html') {}
 
