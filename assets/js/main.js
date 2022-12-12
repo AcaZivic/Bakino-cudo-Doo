@@ -137,7 +137,7 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         ispisKomentara(komentariObj,nizKomentara);
         prikazForme(inputFormObjects,labelFormObjects);
     }else{
-        
+
     }
     if(url=='/pages/usluge.html'){
         prefiksPomocno = `../`;
@@ -212,6 +212,7 @@ function slajderSlike(slajderObj,slajderAltSlike,slajderNizSlike){
         divObj.classList.add('carousel-item');
         if (!i) {divObj.classList.add('az-visible')};
         divObj.innerHTML =`<img src=${slajderNizSlike[i]} class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`;
+        console.log(`${slajderNizSlike[i]} class="d-block w-100 mx-auto" alt="${slajderAltSlike[i]}"/>`);
         slajderObj.lastElementChild.appendChild(divObj);
         // console.log(slajderObj.lastElementChild)
         // console.log(divObj);

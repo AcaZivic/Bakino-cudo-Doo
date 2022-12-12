@@ -303,6 +303,7 @@ function slajderSlike(slajderObj, slajderAltSlike, slajderNizSlike) {
 
     ;
     divObj.innerHTML = "<img src=".concat(slajderNizSlike[i], " class=\"d-block w-100 mx-auto\" alt=\"").concat(slajderAltSlike[i], "\"/>");
+    console.log("".concat(slajderNizSlike[i], " class=\"d-block w-100 mx-auto\" alt=\"").concat(slajderAltSlike[i], "\"/>"));
     slajderObj.lastElementChild.appendChild(divObj); // console.log(slajderObj.lastElementChild)
     // console.log(divObj);
   }
