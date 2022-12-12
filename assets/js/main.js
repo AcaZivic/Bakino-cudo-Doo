@@ -137,7 +137,7 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     }else{
 
     }
-    if(url=='/pages/usluge.html'){
+    if(url=='/BakinoCudoDoo//pages/usluge.html'){
         prefiksPomocno = `../`;
         prefiksPage= `..`+prefiksPage;
         console.log(prefiksPage);

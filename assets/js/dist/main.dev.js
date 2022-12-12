@@ -210,7 +210,7 @@ window.onload = function () {
     prikazForme(inputFormObjects, labelFormObjects);
   } else {}
 
-  if (url == '/pages/usluge.html') {
+  if (url == '/BakinoCudoDoo//pages/usluge.html') {
     prefiksPomocno = "../";
     prefiksPage = ".." + prefiksPage;
     console.log(prefiksPage);
