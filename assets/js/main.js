@@ -20,7 +20,7 @@ const footerIcons = document.querySelector("footer ul.d-flex");
 
 let url = window.location.pathname;
 url = (url=='/BakinoCudoDoo/')?'/BakinoCudoDoo/index.html':url;
-console.log(url);
+// console.log(url);
 window.onload = function(){
 
 //Konstante za navigacioni meni
@@ -29,7 +29,7 @@ const nizLinkovaStranica = [`${prefiksOnline}/index.html`,`${prefiksOnline+prefi
 
     
     if(url=='/BakinoCudoDoo/index.html'){
-        console.log("RADI");
+        // console.log("RADI");
         
 //Konstante za slajeder
 const slajderObj = document.querySelector("#carouselSliderIndicators");

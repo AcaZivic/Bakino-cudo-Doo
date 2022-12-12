@@ -18,8 +18,7 @@ var footerInfoFaIcons = ["phone", "envelope", "map-marker-alt"];
 var footerInfoTxt = ["&nbsp;&nbsp;063/710-5150", "&nbsp;&nbsp;aleksandar&#46;zivic&#46;7&#46;21&#64;ict&#46;edu&#46;rs", "&nbsp;&nbsp;Zdravka \u010Celara 16, Belgrade"];
 var footerIcons = document.querySelector("footer ul.d-flex");
 var url = window.location.pathname;
-url = url == '/BakinoCudoDoo/' ? '/BakinoCudoDoo/index.html' : url;
-console.log(url);
+url = url == '/BakinoCudoDoo/' ? '/BakinoCudoDoo/index.html' : url; // console.log(url);
 
 window.onload = function () {
   //Konstante za navigacioni meni
@@ -27,8 +26,8 @@ window.onload = function () {
   var nizLinkovaStranica = ["".concat(prefiksOnline, "/index.html"), "".concat(prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksOnline + prefiksPage, "autor.html")];
 
   if (url == '/BakinoCudoDoo/index.html') {
-    console.log("RADI"); //Konstante za slajeder
-
+    // console.log("RADI");
+    //Konstante za slajeder
     var slajderObj = document.querySelector("#carouselSliderIndicators");
     var slajderNizSlike = ["".concat(prefiksSlike, "slanaJela.jpg"), "".concat(prefiksSlike, "cokolodnaTorta.jpg"), "".concat(prefiksSlike, "rakijaViseFlasa.jpg")];
     var slajderAltSlike = ['slano posluzenje', 'čokolodna torta', 'flaše rakije raznih ukusa']; //Konstante za prednostiBlok
