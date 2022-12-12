@@ -31,16 +31,16 @@ window.onload = function(){
         
 //Konstante za slajeder
 const slajderObj = document.querySelector("#carouselSliderIndicators");
-const slajderNizSlike = [`${prefiksSlike}slanaJela.jpg`,`${prefiksSlike}cokolodnaTorta.jpg`,`${prefiksSlike}rakijaViseFlasa.jpg`];
+const slajderNizSlike = [`${prefiksOnline+prefiksSlike}slanaJela.jpg`,`${prefiksOnline+prefiksSlike}cokolodnaTorta.jpg`,`${prefiksOnline+prefiksSlike}rakijaViseFlasa.jpg`];
 const slajderAltSlike = ['slano posluzenje','čokolodna torta','flaše rakije raznih ukusa'];
 
 //Konstante za prednostiBlok
 const prednostiBlok = document.querySelector("#blokPrednosti");
 var prednostiObj = []
-prednostiObj.push({slikaSrc:`${prefiksSlike}svezeNamirnice.jpg`,slikaAlt:'Sveze namirnice',naslov:'Sveže namirnice',tekst:'Namirnice koje koristimo su isključivo od naših sigurnih partnera.',faIcon:'carrot'});
-prednostiObj.push({slikaSrc:`${prefiksSlike}brzaDostava.jpg`,slikaAlt:'Brza Dostava',naslov:'Brza dostava',tekst:'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',faIcon:'clock'});
-prednostiObj.push({slikaSrc:`${prefiksSlike}raznovrsnaHrana.jpg`,slikaAlt:'Raznovrsna hrana',naslov:'Raznovrsna jela',tekst:'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',faIcon:'bowl-food'});
-prednostiObj.push({slikaSrc:`${prefiksSlike}velikoIskustvo.jpg`,slikaAlt:'Veliko iskustvo',naslov:'Veliko iskustvo',tekst:'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',faIcon:'star'});
+prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}svezeNamirnice.jpg`,slikaAlt:'Sveze namirnice',naslov:'Sveže namirnice',tekst:'Namirnice koje koristimo su isključivo od naših sigurnih partnera.',faIcon:'carrot'});
+prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}brzaDostava.jpg`,slikaAlt:'Brza Dostava',naslov:'Brza dostava',tekst:'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',faIcon:'clock'});
+prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}raznovrsnaHrana.jpg`,slikaAlt:'Raznovrsna hrana',naslov:'Raznovrsna jela',tekst:'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',faIcon:'bowl-food'});
+prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}velikoIskustvo.jpg`,slikaAlt:'Veliko iskustvo',naslov:'Veliko iskustvo',tekst:'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',faIcon:'star'});
 
 
 

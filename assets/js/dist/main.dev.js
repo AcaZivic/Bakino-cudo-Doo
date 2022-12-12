@@ -25,34 +25,34 @@ window.onload = function () {
     // console.log("RADI");
     //Konstante za slajeder
     var slajderObj = document.querySelector("#carouselSliderIndicators");
-    var slajderNizSlike = ["".concat(prefiksSlike, "slanaJela.jpg"), "".concat(prefiksSlike, "cokolodnaTorta.jpg"), "".concat(prefiksSlike, "rakijaViseFlasa.jpg")];
+    var slajderNizSlike = ["".concat(prefiksOnline + prefiksSlike, "slanaJela.jpg"), "".concat(prefiksOnline + prefiksSlike, "cokolodnaTorta.jpg"), "".concat(prefiksOnline + prefiksSlike, "rakijaViseFlasa.jpg")];
     var slajderAltSlike = ['slano posluzenje', 'čokolodna torta', 'flaše rakije raznih ukusa']; //Konstante za prednostiBlok
 
     var prednostiBlok = document.querySelector("#blokPrednosti");
     var prednostiObj = [];
     prednostiObj.push({
-      slikaSrc: "".concat(prefiksSlike, "svezeNamirnice.jpg"),
+      slikaSrc: "".concat(prefiksOnline + prefiksSlike, "svezeNamirnice.jpg"),
       slikaAlt: 'Sveze namirnice',
       naslov: 'Sveže namirnice',
       tekst: 'Namirnice koje koristimo su isključivo od naših sigurnih partnera.',
       faIcon: 'carrot'
     });
     prednostiObj.push({
-      slikaSrc: "".concat(prefiksSlike, "brzaDostava.jpg"),
+      slikaSrc: "".concat(prefiksOnline + prefiksSlike, "brzaDostava.jpg"),
       slikaAlt: 'Brza Dostava',
       naslov: 'Brza dostava',
       tekst: 'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',
       faIcon: 'clock'
     });
     prednostiObj.push({
-      slikaSrc: "".concat(prefiksSlike, "raznovrsnaHrana.jpg"),
+      slikaSrc: "".concat(prefiksOnline + prefiksSlike, "raznovrsnaHrana.jpg"),
       slikaAlt: 'Raznovrsna hrana',
       naslov: 'Raznovrsna jela',
       tekst: 'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',
       faIcon: 'bowl-food'
     });
     prednostiObj.push({
-      slikaSrc: "".concat(prefiksSlike, "velikoIskustvo.jpg"),
+      slikaSrc: "".concat(prefiksOnline + prefiksSlike, "velikoIskustvo.jpg"),
       slikaAlt: 'Veliko iskustvo',
       naslov: 'Veliko iskustvo',
       tekst: 'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',
