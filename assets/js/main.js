@@ -162,7 +162,7 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     footerIconObjects.push({link:`${prefiksPomocno}rss.xml`,icon:`fas fa-rss`})
 //Konstante za navigacioni meni
     const nizStranica = ["Početna","Usluge","Meni","Saveti","Kontakt","O autoru"];
-    const nizLinkovaStranica = [`${prefiksOnline}/index.html`,`${prefiksOnline+prefiksPage}usluge.html`,`${prefiksOnline+prefiksPage}meni.html`,`${prefiksOnline+prefiksPage}saveti.html`,`${prefiksOnline+prefiksPage}kontakt.html`,`${prefiksOnline+prefiksPage}autor.html`];
+    const nizLinkovaStranica = [`${prefiksOnline}index.html`,`${prefiksOnline+prefiksPage}usluge.html`,`${prefiksOnline+prefiksPage}meni.html`,`${prefiksOnline+prefiksPage}saveti.html`,`${prefiksOnline+prefiksPage}kontakt.html`,`${prefiksOnline+prefiksPage}autor.html`];
     padajuciMeni();
     strelicaPrikaz();
     prikazNavigacije(nizStranica,nizLinkovaStranica);

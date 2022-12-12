@@ -245,7 +245,7 @@ window.onload = function () {
   }); //Konstante za navigacioni meni
 
   var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
-  var nizLinkovaStranica = ["".concat(prefiksOnline, "/index.html"), "".concat(prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksOnline + prefiksPage, "autor.html")];
+  var nizLinkovaStranica = ["".concat(prefiksOnline, "index.html"), "".concat(prefiksOnline + prefiksPage, "usluge.html"), "".concat(prefiksOnline + prefiksPage, "meni.html"), "".concat(prefiksOnline + prefiksPage, "saveti.html"), "".concat(prefiksOnline + prefiksPage, "kontakt.html"), "".concat(prefiksOnline + prefiksPage, "autor.html")];
   padajuciMeni();
   strelicaPrikaz();
   prikazNavigacije(nizStranica, nizLinkovaStranica);
