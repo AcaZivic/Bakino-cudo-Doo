@@ -29,7 +29,7 @@ const nizLinkovaStranica = ["/index.html",`${prefiksPage}usluge.html`,`${prefiks
 
 
     
-
+console.log("RADI");
     
     if(url=='/BakinoCudoDoo/index.html'){
         console.log("RADI");

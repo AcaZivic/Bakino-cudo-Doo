@@ -24,6 +24,7 @@ window.onload = function () {
   //Konstante za navigacioni meni
   var nizStranica = ["Početna", "Usluge", "Meni", "Saveti", "Kontakt", "O autoru"];
   var nizLinkovaStranica = ["/index.html", "".concat(prefiksPage, "usluge.html"), "".concat(prefiksPage, "meni.html"), "".concat(prefiksPage, "saveti.html"), "".concat(prefiksPage, "kontakt.html"), "".concat(prefiksPage, "autor.html")];
+  console.log("RADI");
 
   if (url == '/BakinoCudoDoo/index.html') {
     console.log("RADI"); //Konstante za slajeder
