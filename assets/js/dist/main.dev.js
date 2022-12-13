@@ -173,7 +173,7 @@ window.onload = function () {
         });
       } else {
         formaSelect.previousElementSibling.classList.add("text-danger");
-        formaSelect.previousElementSibling.classList.add("text-success");
+        formaSelect.previousElementSibling.classList.remove("text-success");
         formaSelect.classList.add("az-form-border");
         divCbx[0].previousElementSibling.classList.add("az-invisible");
         divCbx[0].classList.add('az-invisible');
@@ -539,6 +539,14 @@ function proveraForme() {
       element.value = '';
     });
     selectFormObject.selectedIndex = 0;
+    selectFormObject.previousElementSibling.classList.add("text-danger");
+    selectFormObject.previousElementSibling.classList.remove("text-success");
+    selectFormObject.classList.add("az-form-border");
+    var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
+    divCbx[0].previousElementSibling.classList.add("az-invisible");
+    divCbx[0].classList.add('az-invisible');
+    divCbx[1].classList.add('az-invisible');
+    divCbx[1].nextElementSibling.classList.add("az-invisible");
   } else {
     this.previousElementSibling.classList.add("az-red");
     this.previousElementSibling.classList.remove("text-success");
