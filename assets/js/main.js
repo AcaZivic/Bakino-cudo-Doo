@@ -74,7 +74,7 @@ window.onload = function(){
             var inputFormObjects = formaObj.querySelectorAll(`input[type='text'],input[type='email']`);
             var labelFormObjects = formaObj.querySelectorAll("label");
             var formDugme = formaObj.querySelector("#dugmeProvera");
-            proveraFormeUzivo();
+            proveraFormeUzivo(inputFormObjects);
             formDugme.addEventListener("click",proveraForme);
 
         slajderSlike(slajderObj,slajderAltSlike,slajderNizSlike);
@@ -155,7 +155,7 @@ window.onload = function(){
 
 };
 
-function proveraFormeUzivo(){
+function proveraFormeUzivo(inputFormObjects){
     const formaSelect = document.querySelector("select");
     var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
     formaSelect.addEventListener('change',function(){
