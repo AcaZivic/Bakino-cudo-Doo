@@ -2,16 +2,16 @@
 <rss version="2.0">
 <channel>
     <title>Ketering "Bakino čudo" - vesti</title>
-    <link>https://acazivic.github.io/bakinoCudo/index.html</link>
+    <link>https://acazivic.github.io/bakinoCudoDoo/index.html</link>
     <description>Važne informacije o ponudi keteringa.</description>
     <item>
         <title>Saveti</title>
-        <link>https://acazivic.github.io/bakinoCudo/pages/saveti.html</link>
+        <link>https://acazivic.github.io/bakinoCudoDoo/pages/saveti.html</link>
         <description>Saveti baka Zorke o raznim temama.</description>
     </item>
     <item>
         <title>Meni</title>
-        <link>https://acazivic.github.io/bakinoCudo/pages/meni.html</link>
+        <link>https://acazivic.github.io/bakinoCudoDoo/pages/meni.html</link>
         <description>Meni se stalno menja i možete videti šta je trenutno dostupno za naručivanje.</description>
     </item>
 </channel>
