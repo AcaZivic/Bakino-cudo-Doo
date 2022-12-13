@@ -21,9 +21,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
     
     <!-- My CSS -->
-    <link rel="stylesheet" href="../assets/css/style-min.css"/>
+    <link rel="stylesheet" href="../assets/css/style.css"/>
+    <link rel="stylesheet" href="../assets/css/responsive.css"/>
 </head>
 <body>
+  <!-- Start Loader -->
+  <div id="load-screen" class="loader-wrapper d-flex justify-content-center align-items-center">
+    <div class="az-load-animation ">
+      <img class='az-h-img' src="../assets/images/Logo.png" alt="Bakino cudo logo"/>
+    </div>
+  </div>
     <!-- Start header -->
     <header class="container-fluid text-center py-2">
       <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto bg-transparent">
@@ -32,29 +39,12 @@
               <img class="mx-auto" src="../assets/images/Logo.png" alt="Baka logo"/>
               <h1 class="fs-1 ps-2 az-red">Bakino čudo</h1>
             </a>
-          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button id="btnMeni" class="navbar-toggler bg-light" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item me-1">
-                <a class="nav-link fs-5 px-3 py-2 az-red" aria-current="page" href="../index.html">Početna</a>
-              </li>
-              <li class="nav-item me-1">
-                <a class="nav-link fs-5 px-3 py-2 az-red" href="usluge.html">Usluge</a>
-              </li>
-              <li class="nav-item me-1">
-                <a class="nav-link fs-5 px-3 py-2 az-red" href="meni.html">Meni</a>
-              </li>
-              <li class="nav-item me-1">
-                <a class="nav-link fs-5 px-3 py-2 az-red" href="saveti.html">Saveti</a>
-              </li>
-              <li class="nav-item me-1">
-                <a class="nav-link fs-5 px-3 py-2 az-red" href="kontakt.html">Kontakt</a>
-              </li>
-              <li class="nav-item me-1">
-                <a class="nav-link active fs-5 px-3 py-2 " href="autor.html">O autoru</a>
-              </li>
+            <ul id="navigacija" class="navbar-nav align-items-center">
+              
             </ul>
           </div>
         </div>
@@ -85,7 +75,8 @@
             <div class="row mt-3">
               <div class="col-lg-6 col-md-6 col-12 d-flex flex-column justify-content-end mb-5">
                 <h2 class="pb-2 fs-1">Autor sajta</h2>
-                <p>Napravio sam sajt zato što mi je uvek bilo interesantno da kuvam sa mojom bakom. Iz tog razloga sam došao i do <span class="fw-bold">Keteringa "Bakino čudo"</span> <br/>Njeni <span class="fw-bold"> specijaliteti su oduševili svakoga </span>, a neke od njih sam i ja smišljao uz pomoć interneta. </p>
+                <p><span class="text-capitalize fs-2">Aleksandar Živić 7/21
+                </span>Napravio sam sajt zato što mi je uvek bilo interesantno da kuvam sa mojom bakom. Iz tog razloga sam došao i do <span class="fw-bold">Keteringa "Bakino čudo"</span> <br/>Njeni <span class="fw-bold"> specijaliteti su oduševili svakoga </span>, a neke od njih sam i ja smišljao uz pomoć interneta. </p>
                 <p class="py-3">Ukoliko želite videti sve o meni možete to učiniti pritiskom na dugme.</p>
                 <a class="py-3 btn btn-warning btn-lg w-50 az-bg-red" target="_blank" href="https://acazivic.github.io/portfolio/">Portfolio</a>
               </div>
@@ -118,31 +109,21 @@
             </div>
           </div>
         </div>
+        <button id="strelicaPocetak" class=" justify-content-center align-items-center ">
+          <i class="fa-solid fa-arrow-up"></i>
+      </button>
     </main>
     <footer class="container-fluid bg-dark position-relative">
       <div class="container py-3">
         <div class="row py-3">
             <div class="col-lg-4 col-12">
               <h3 class="fs-5 text-warning">Korisni linkovi</h3>
-                <ul class="row my-3">
-                  <li class="col-6"><a href="../index.html">Početna</a></li>
-                  <li class="col-6"><a href="usluge.html">Usluge</a></li>
-                </ul>
-                <ul class="row my-3">
-                  <li class=" col-6"><a href="meni.html">Meni</a></li>
-                  <li class="col-6"><a href="saveti.html">Saveti</a></li>
-                </ul>
-                <ul class="row my-3">
-                  <li class=" col-6"><a href="kontakt.html">Kontakt</a></li>
-                  <li class="col-6"><a href="autor.html">O autoru</a></li>
-                </ul>
+                  
             </div>
             <div class="col-lg-4  col-12">
               <h3 class="fs-5 text-warning text-start">Kontakt informacije </h3>
               <ul id="contact">
-                <li class="my-3"><i class="fas fa-phone"></i> &nbsp;&nbsp;063/710-5150</li>
-                <li class="my-3 az-m"><i class="fas fa-envelope"></i> &nbsp;&nbsp;aleksandar&#46;zivic&#46;7&#46;21&#64;ict&#46;edu&#46;rs</li>
-                <li class="my-3"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp;Zdravka Čelara 16, Belgrade</li>
+              
               </ul>
             </div>
             <div class="col-lg-4 col-12">
@@ -170,21 +151,15 @@
           </div>
           <div class="col-xl-4 offset-xl-3 col-lg-5 col-12 offset-lg-2">
             <ul class="d-flex justify-content-between align-items-center">
-              
-              <li><a class="az-sm d-flex justify-content-center align-items-center rounded-circle" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> </li>
-              <li><a class="az-sm d-flex justify-content-center align-items-center rounded-circle" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-              <li><a class="az-sm d-flex justify-content-center align-items-center rounded-circle"  href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a class="az-sm d-flex justify-content-center align-items-center rounded-circle"  href="../assets/css/stilizovanje.css"><i class="fa-brands fa-css3"></i></a></li>
-              <li><a class="az-sm d-flex justify-content-center align-items-center rounded-circle"  href="../sitemap.xml"><i class="fa-solid fa-sitemap"></i></a></li>
-              <li ><a class="az-sm d-flex justify-content-center align-items-center rounded-circle" href="../rss.xml"><i class="fas fa-rss"></i></a></li>
-              
             </ul>
           </div>
         </div>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- My JavaScript -->
-    <script type="text/javascript" src="./assets/js/main.js"></script>
+    <script type="text/javascript" src="../assets/js/main.js"></script>
 </body>
 </html>
