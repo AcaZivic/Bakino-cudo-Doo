@@ -232,15 +232,15 @@ window.onload = function () {
     icon: "fab fa-facebook-f"
   });
   footerIconObjects.push({
-    link: "".concat(prefiksPomocno + prefiksDok, "Dokumentacija (BakinoCudo).docx"),
+    link: "".concat(prefiksOnline + prefiksDok, "Dokumentacija (BakinoCudo).docx"),
     icon: "fa-solid fa-file"
   });
   footerIconObjects.push({
-    link: "".concat(prefiksPomocno, "sitemap.xml"),
+    link: "".concat(prefiksOnline, "sitemap.xml"),
     icon: "fa-solid fa-sitemap"
   });
   footerIconObjects.push({
-    link: "".concat(prefiksPomocno, "rss.xml"),
+    link: "".concat(prefiksOnline, "rss.xml"),
     icon: "fas fa-rss"
   }); //Konstante za navigacioni meni
 
