@@ -17,17 +17,17 @@ var footerLink = document.querySelector("footer .row.py-3 > div"),
     footerIcons = document.querySelector("footer ul.d-flex");
 var url = window.location.pathname;
 
-function proveraFormeUzivo() {
-  var e = document.querySelector("select");
-  var i = document.querySelectorAll(".form-floating.col-md-12 > .row");
-  e.addEventListener("change", function () {
-    var a = Number(e.value);
-    a ? (e.previousElementSibling.classList.remove("text-danger"), e.previousElementSibling.classList.add("text-success"), e.classList.remove("az-form-border"), prikazCheckBoxova(a), i[0].previousElementSibling.classList.remove("az-invisible"), i[0].classList.remove("az-invisible"), i[1].classList.remove("az-invisible"), i.forEach(function (e) {
+function proveraFormeUzivo(e) {
+  var i = document.querySelector("select");
+  var a = document.querySelectorAll(".form-floating.col-md-12 > .row");
+  i.addEventListener("change", function () {
+    var e = Number(i.value);
+    e ? (i.previousElementSibling.classList.remove("text-danger"), i.previousElementSibling.classList.add("text-success"), i.classList.remove("az-form-border"), prikazCheckBoxova(e), a[0].previousElementSibling.classList.remove("az-invisible"), a[0].classList.remove("az-invisible"), a[1].classList.remove("az-invisible"), a.forEach(function (e) {
       e.querySelectorAll("input[type='checkbox']").forEach(function (e) {
         return nizCboxa.push(e);
       });
-    })) : (e.previousElementSibling.classList.add("text-danger"), e.previousElementSibling.classList.remove("text-success"), e.classList.add("az-form-border"), i[0].previousElementSibling.classList.add("az-invisible"), i[0].classList.add("az-invisible"), i[1].classList.add("az-invisible"), i[1].nextElementSibling.classList.add("az-invisible"));
-  }), inputFormObjects.forEach(function (e) {
+    })) : (i.previousElementSibling.classList.add("text-danger"), i.previousElementSibling.classList.remove("text-success"), i.classList.add("az-form-border"), a[0].previousElementSibling.classList.add("az-invisible"), a[0].classList.add("az-invisible"), a[1].classList.add("az-invisible"), a[1].nextElementSibling.classList.add("az-invisible"));
+  }), e.forEach(function (e) {
     e.addEventListener("keyup", function () {
       e.value.length ? (e.classList.remove("az-form-border"), e.nextElementSibling.nextElementSibling.classList.add("az-invisible"), proveriElem(e)) : (bool = !1, e.classList.add("az-form-border"), e.nextElementSibling.nextElementSibling.innerHTML = "Niste popunili polje", e.nextElementSibling.nextElementSibling.classList.remove("az-invisible"));
     });
@@ -354,7 +354,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
     var m = p.querySelectorAll("input[type='text'],input[type='email']"),
         k = p.querySelectorAll("label"),
         f = p.querySelector("#dugmeProvera");
-    proveraFormeUzivo(), f.addEventListener("click", proveraForme), slajderSlike(e, ["slano posluzenje", "čokolodna torta", "flaše rakije raznih ukusa"], i), prikazPrednosti(a, t), procitajVise(n), ispisSvihNaslova(r, o), ispisSvihNaslova([{
+    proveraFormeUzivo(m), f.addEventListener("click", proveraForme), slajderSlike(e, ["slano posluzenje", "čokolodna torta", "flaše rakije raznih ukusa"], i), prikazPrednosti(a, t), procitajVise(n), ispisSvihNaslova(r, o), ispisSvihNaslova([{
       naslov: "Komentari posetilaca",
       oznaka: "",
       opis: "Stalno dobijamo komentare i ovde možete videti šta ljudi koji su probali naše specijalitete misle o njima."

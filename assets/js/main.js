@@ -36,9 +36,6 @@ window.onload = function(){
         prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}brzaDostava.jpg`,slikaAlt:'Brza Dostava',naslov:'Brza dostava',tekst:'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',faIcon:'clock'});
         prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}raznovrsnaHrana.jpg`,slikaAlt:'Raznovrsna hrana',naslov:'Raznovrsna jela',tekst:'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',faIcon:'bowl-food'});
         prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}velikoIskustvo.jpg`,slikaAlt:'Veliko iskustvo',naslov:'Veliko iskustvo',tekst:'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',faIcon:'star'});
-
-
-
         //Komentari
         const naslovKomentara = document.querySelectorAll("#Komentari div.col-12.text-center");
         var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno dobijamo komentare i ovde možete videti šta ljudi koji su probali naše specijalitete misle o njima."}];
