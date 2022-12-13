@@ -204,8 +204,8 @@ window.onload = function () {
     ispisSaveta(savetiObj, nizSaveta);
     ispisKomentara(komentariObj, nizKomentara);
     prikazForme(inputFormObjects, labelFormObjects);
-  } else {// prefiksPomocno = `../`;
-    // prefiksPage= `..`+prefiksPage;
+  } else {
+    prefiksPomocno = "../"; // prefiksPage= `..`+prefiksPage;
     // console.log(prefiksPage);
   }
 
@@ -232,7 +232,7 @@ window.onload = function () {
     icon: "fab fa-facebook-f"
   });
   footerIconObjects.push({
-    link: "".concat(prefiksDok, "Dokumentacija (BakinoCudo).docx"),
+    link: "".concat(prefiksPomocno + prefiksDok, "Dokumentacija (BakinoCudo).docx"),
     icon: "fa-solid fa-file"
   });
   footerIconObjects.push({

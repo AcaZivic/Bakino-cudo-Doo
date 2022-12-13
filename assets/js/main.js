@@ -133,7 +133,7 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         ispisKomentara(komentariObj,nizKomentara);
         prikazForme(inputFormObjects,labelFormObjects);
     }else{
-        // prefiksPomocno = `../`;
+        prefiksPomocno = `../`;
         // prefiksPage= `..`+prefiksPage;
         // console.log(prefiksPage);
     }
@@ -157,7 +157,7 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     footerIconObjects.push({link:"https://twitter.com/",icon:`fab fa-twitter`})
     footerIconObjects.push({link:"https://www.instagram.com/",icon:`fab fa-instagram`})
     footerIconObjects.push({link:"https://www.facebook.com/",icon:`fab fa-facebook-f`})
-    footerIconObjects.push({link:`${prefiksDok}Dokumentacija (BakinoCudo).docx`,icon:`fa-solid fa-file`})
+    footerIconObjects.push({link:`${prefiksPomocno+prefiksDok}Dokumentacija (BakinoCudo).docx`,icon:`fa-solid fa-file`})
     footerIconObjects.push({link:`${prefiksPomocno}sitemap.xml`,icon:`fa-solid fa-sitemap`})
     footerIconObjects.push({link:`${prefiksPomocno}rss.xml`,icon:`fas fa-rss`})
 //Konstante za navigacioni meni
