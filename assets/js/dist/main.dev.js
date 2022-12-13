@@ -532,6 +532,10 @@ function proveraForme() {
     this.previousElementSibling.classList.remove("az-red");
     this.previousElementSibling.classList.add("text-success");
     this.previousElementSibling.innerHTML = "Uspešno ste naručili hranu !";
+    inputFormObjects.forEach(function (element, indeks) {
+      element.value = '';
+    });
+    selectFormObject.selectedIndex = 0;
   } else {
     this.previousElementSibling.classList.add("az-red");
     this.previousElementSibling.classList.remove("text-success");
