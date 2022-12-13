@@ -225,7 +225,7 @@ window.onload = function () {
     icon: "fab fa-facebook-f"
   });
   footerIconObjects.push({
-    link: "".concat(prefiksOnline + prefiksDok, "Dokumentacija (BakinoCudo).docx"),
+    link: "".concat(prefiksOnline + prefiksDok, "Dokumentacija.pdf"),
     icon: "fa-solid fa-file"
   });
   footerIconObjects.push({

@@ -400,7 +400,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
     link: "https://www.facebook.com/",
     icon: "fab fa-facebook-f"
   }), g.push({
-    link: "".concat(prefiksOnline + prefiksDok, "Dokumentacija (BakinoCudo).docx"),
+    link: "".concat(prefiksOnline + prefiksDok, "Dokumentacija.pdf"),
     icon: "fa-solid fa-file"
   }), g.push({
     link: "".concat(prefiksOnline, "sitemap.xml"),

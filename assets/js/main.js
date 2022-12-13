@@ -134,7 +134,7 @@ window.onload = function(){
     footerIconObjects.push({link:"https://twitter.com/",icon:`fab fa-twitter`})
     footerIconObjects.push({link:"https://www.instagram.com/",icon:`fab fa-instagram`})
     footerIconObjects.push({link:"https://www.facebook.com/",icon:`fab fa-facebook-f`})
-    footerIconObjects.push({link:`${prefiksOnline+prefiksDok}Dokumentacija (BakinoCudo).docx`,icon:`fa-solid fa-file`})
+    footerIconObjects.push({link:`${prefiksOnline+prefiksDok}Dokumentacija.pdf`,icon:`fa-solid fa-file`})
     footerIconObjects.push({link:`${prefiksOnline}sitemap.xml`,icon:`fa-solid fa-sitemap`})
     footerIconObjects.push({link:`${prefiksOnline}rss.xml`,icon:`fas fa-rss`})
 //Konstante za navigacioni meni
