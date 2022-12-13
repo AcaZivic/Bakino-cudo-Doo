@@ -211,13 +211,11 @@ window.onload = function () {
 
   if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
     prikazStrane.forEach(function (elem) {
-      elem.innerText = url.substring(url.lastIndexOf('/')).toUpperCase();
+      elem.innerText = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf(".")).toLowerCase();
     });
   }
 
-  if (url == "".concat(prefiksOnline, "pages/saveti.html")) {
-    "pera".last;
-  }
+  if (url == "".concat(prefiksOnline, "pages/saveti.html")) {}
 
   if (url == "".concat(prefiksOnline, "pages/kontakt.html")) {}
 

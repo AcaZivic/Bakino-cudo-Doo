@@ -138,12 +138,12 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     }
     if(url==`${prefiksOnline}pages/usluge.html`){
         prikazStrane.forEach(function(elem){
-            elem.innerText=url.substring(url.lastIndexOf('/')).toUpperCase();
+            elem.innerText=url.substring(url.lastIndexOf('/')+1,url.lastIndexOf(".")).toLowerCase();
         });
     }
 
     if(url==`${prefiksOnline}pages/saveti.html`){
-        "pera".last
+        
     }
     
     if(url==`${prefiksOnline}pages/kontakt.html`){
