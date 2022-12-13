@@ -12,12 +12,42 @@
     --beige2:#d0a772;
     --add: #FDB560;
 }
+::selection {
+    background-color: var(--beige2);
+}
 html{
     font-size: 1em;
 }
 body{
     background-color: var(--white);
+    overflow-y: hidden;
 }
+.az-body-visi{
+    overflow-y: visible!important;
+}
+label.error{
+    color:rgba(181, 33, 37,0.92);
+    font-weight: bold;
+    padding-left:1em;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  body::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  body::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 .row{
     margin-left: 0px;
     margin-right: 0px;
@@ -28,6 +58,47 @@ ul{
 .modal ul {
     padding-left: 2rem;
 }
+.loader-wrapper{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    z-index: 101;
+    overflow: hidden;
+}
+.az-load-animation{
+    animation: loader 1.5s infinite;
+}
+.az-h-img{
+    height: 10rem;
+}
+.az-load-del{
+    display: none!important;
+}
+.az-anim-opac{
+    animation: opac 1.7s ease;
+}
+@keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes opac{
+    0% {
+        opacity: 1;
+      }
+    50%{
+        opacity: 0;
+    }
+      100% {
+        opacity: 0;
+      }
+  }
 /* End whole document */
 /* Start header */
 header{
@@ -95,6 +166,16 @@ main > #carouselSliderIndicators .carousel-indicators button{
     width: 4.5rem !important;
     height: 5.2rem !important;
     background-color: transparent !important;
+    border: 0;
+    opacity: 0.5;
+    transition: ease opacity 0.3s;
+}
+.az-active{
+    opacity: 1!important;
+}
+
+.az-slider-start{
+    transform: translateX(-100%);
 }
 /* End slider  */
 /* Start main */
@@ -110,6 +191,18 @@ main > #carouselSliderIndicators .carousel-indicators button{
 }
 .az-mb-5{
     margin-bottom: 5rem!important;
+}
+.az-invisible{
+    display: none;
+}
+.az-visible{
+    display: block!important;
+}
+.error{
+    display: block;
+}
+.az-width{
+    width: 100%!important;
 }
 #sefKuhinje::after,#Autor::after,#uslugeStrana::after,#meniStrana::after{
     content: "";
@@ -199,6 +292,62 @@ main > #carouselSliderIndicators .carousel-indicators button{
 .az-opac{
     opacity: 0.6;
 }
+/*Start Arrow*/
+#strelicaPocetak{
+    display: none;
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    border: 1px solid var(--add);
+    z-index: 100;
+    transition: all 0.3s ease;
+    
+}
+#strelicaPocetak:hover{
+    background-color: var(--add);
+}
+#strelicaPocetak:hover i{
+    color: var(--white);
+}
+#strelicaPocetak i{
+    font-size: 3rem;
+    color: var(--add);
+}
+.postaviStrelicu{
+    animation: strelicaPoc;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+}
+.skiniStrelicu{
+    animation: strelicaKraj;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+@keyframes strelicaPoc{
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes strelicaKraj{
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0,100%,0);
+        display: none;
+    }
+    
+}
+/*End Arrow*/
 /* End main */
 /* Start footer */
 footer ul{
@@ -276,6 +425,13 @@ footer::before{
     border-color: rgba(181, 33, 37,0.45);
     box-shadow: 0 0 0 0.25rem rgba(181, 33, 37,0.25);
 }
+.az-form-border{
+    border-color: rgba(181, 33, 37);
+    box-shadow: 0 0 0 0.25rem rgba(181, 33, 37,0.50);
+}
+.form-floating > .form-control,.form-floating>.form-select{
+    height: 3.7rem;
+}
 #citat{
     background-image: url("../images/citatSlika.jpg");
     color: var(--white);
@@ -294,7 +450,7 @@ footer::before{
 }
 /* End usluge */
 
-
+/*RESPONSIVE*/
 @media  screen and (max-width:1200px) {
     footer li,footer span, footer p{
         font-size: 0.90rem;

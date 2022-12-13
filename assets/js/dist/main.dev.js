@@ -22,7 +22,6 @@ url = url == '/BakinoCudoDoo/' ? '/BakinoCudoDoo/index.html' : url; // console.l
 
 window.onload = function () {
   if (url == '/BakinoCudoDoo/index.html') {
-    // console.log("RADI");
     //Konstante za slajeder
     var slajderObj = document.querySelector("#carouselSliderIndicators");
     var slajderNizSlike = ["".concat(prefiksOnline + prefiksSlike, "slanaJela.jpg"), "".concat(prefiksOnline + prefiksSlike, "cokolodnaTorta.jpg"), "".concat(prefiksOnline + prefiksSlike, "rakijaViseFlasa.jpg")];
@@ -149,52 +148,10 @@ window.onload = function () {
     }); //Forma rezervacije
 
     var formaObj = document.querySelector("#kontaktForm");
-    var formaSelect = document.querySelector("select");
-    var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
     var inputFormObjects = formaObj.querySelectorAll("input[type='text'],input[type='email']");
     var labelFormObjects = formaObj.querySelectorAll("label");
     var formDugme = formaObj.querySelector("#dugmeProvera");
-    formaSelect.addEventListener('change', function () {
-      var pom = Number(formaSelect.value); // console.log(pom);
-
-      if (pom) {
-        formaSelect.previousElementSibling.classList.remove("text-danger");
-        formaSelect.previousElementSibling.classList.add("text-success");
-        formaSelect.classList.remove("az-form-border");
-        prikazCheckBoxova(pom);
-        divCbx[0].previousElementSibling.classList.remove("az-invisible");
-        divCbx[0].classList.remove('az-invisible');
-        divCbx[1].classList.remove('az-invisible');
-        divCbx.forEach(function (elem) {
-          var p = elem.querySelectorAll("input[type='checkbox']");
-          p.forEach(function (elem) {
-            return nizCboxa.push(elem);
-          });
-        });
-      } else {
-        formaSelect.previousElementSibling.classList.add("text-danger");
-        formaSelect.previousElementSibling.classList.remove("text-success");
-        formaSelect.classList.add("az-form-border");
-        divCbx[0].previousElementSibling.classList.add("az-invisible");
-        divCbx[0].classList.add('az-invisible');
-        divCbx[1].classList.add('az-invisible');
-        divCbx[1].nextElementSibling.classList.add("az-invisible");
-      }
-    });
-    inputFormObjects.forEach(function (element) {
-      element.addEventListener('keyup', function () {
-        if (!element.value.length) {
-          bool = false;
-          element.classList.add("az-form-border");
-          element.nextElementSibling.nextElementSibling.innerHTML = 'Niste popunili polje';
-          element.nextElementSibling.nextElementSibling.classList.remove('az-invisible');
-        } else {
-          element.classList.remove("az-form-border");
-          element.nextElementSibling.nextElementSibling.classList.add('az-invisible');
-          proveriElem(element);
-        }
-      });
-    });
+    proveraFormeUzivo();
     formDugme.addEventListener("click", proveraForme);
     slajderSlike(slajderObj, slajderAltSlike, slajderNizSlike);
     prikazPrednosti(prednostiBlok, prednostiObj);
@@ -296,92 +253,53 @@ window.onload = function () {
   setTimeout(slajderAnimacija, 4500);
 };
 
-function formaPlugin() {
-  jQuery.validator.setDefaults({
-    debug: true,
-    success: "valid"
-  });
-  var inp = document.querySelectorAll("input");
-  var lab = document.querySelectorAll("label");
-  prikazForme(inp, lab);
-  var form = $('#konForm');
-  var validatorAz = form.validate({
-    rules: {
-      inputIme: {
-        required: true,
-        minlength: 3
-      },
-      inputPrezime: {
-        required: true,
-        minlength: 3
-      },
-      inputEmail: {
-        required: true,
-        email: true
-      },
-      txtOblast: {
-        required: true
-      }
-    },
-    success: function success(label) {
-      label.text('').addClass('valid');
-    }
-  });
-  var bool;
-  $(".col-12 > button").click(function () {
-    bool = form.valid();
-    var poruka = $("#porukaGreska");
-    var txtObl = document.querySelector("textarea");
-    brisiPoruke(validatorAz);
+function proveraFormeUzivo() {
+  var formaSelect = document.querySelector("select");
+  var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
+  formaSelect.addEventListener('change', function () {
+    var pom = Number(formaSelect.value); // console.log(pom);
 
-    if (txtObl.value.length) {
-      txtObl.nextElementSibling.innerHTML = '';
-    }
-
-    if (!bool) {
-      poruka.removeClass("az-invisible");
-      console.log(poruka);
-      poruka.html("Niste popunili sva polja ispravno !");
-      poruka.removeClass('text-success');
-      poruka.addClass('az-red');
-    } else {
-      poruka.removeClass("az-invisible");
-      poruka.html("Sve je ispravno popunjeno poruka je poslata!");
-      poruka.removeClass('az-red');
-      poruka.addClass('text-success');
-      $("label.error").text('');
-      inp.forEach(function (element) {
-        element.value = '';
+    if (pom) {
+      formaSelect.previousElementSibling.classList.remove("text-danger");
+      formaSelect.previousElementSibling.classList.add("text-success");
+      formaSelect.classList.remove("az-form-border");
+      prikazCheckBoxova(pom);
+      divCbx[0].previousElementSibling.classList.remove("az-invisible");
+      divCbx[0].classList.remove('az-invisible');
+      divCbx[1].classList.remove('az-invisible');
+      divCbx.forEach(function (elem) {
+        var p = elem.querySelectorAll("input[type='checkbox']");
+        p.forEach(function (elem) {
+          return nizCboxa.push(elem);
+        });
       });
-      txtObl.value = '';
+    } else {
+      formaSelect.previousElementSibling.classList.add("text-danger");
+      formaSelect.previousElementSibling.classList.remove("text-success");
+      formaSelect.classList.add("az-form-border");
+      divCbx[0].previousElementSibling.classList.add("az-invisible");
+      divCbx[0].classList.add('az-invisible');
+      divCbx[1].classList.add('az-invisible');
+      divCbx[1].nextElementSibling.classList.add("az-invisible");
     }
   });
-  inp.forEach(function (elem) {
-    elem.addEventListener('focus', function () {
-      brisiPoruke(validatorAz);
+  inputFormObjects.forEach(function (element) {
+    element.addEventListener('keyup', function () {
+      if (!element.value.length) {
+        bool = false;
+        element.classList.add("az-form-border");
+        element.nextElementSibling.nextElementSibling.innerHTML = 'Niste popunili polje';
+        element.nextElementSibling.nextElementSibling.classList.remove('az-invisible');
+      } else {
+        element.classList.remove("az-form-border");
+        element.nextElementSibling.nextElementSibling.classList.add('az-invisible');
+        proveriElem(element);
+      }
     });
   });
 }
 
-function brisiPoruke(pom) {
-  pom.showErrors({
-    inputIme: "",
-    inputEmail: "",
-    inputPrezime: "",
-    txtOblast: "Morate ostaviti poruku koju prosleđujete!"
-  });
-}
-
-function prikazImenaStrane() {
-  var prikazStrane = document.querySelectorAll("#naslovna span");
-  prikazStrane.forEach(function (elem) {
-    elem.innerText = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf(".")).toLowerCase();
-  });
-}
-
 function zavrsiLoadScreen() {
-  // $(".loader-wrapper").fadeOut("slow");
-  // $("#load-screen").animate({"opacity":"0"});
   $("#load-screen").addClass("az-anim-opac");
   $(bodyTag).addClass("az-body-visi");
   setTimeout(function () {
@@ -782,4 +700,87 @@ function slajderAnimacija() {
   $trenutnoDugme.removeClass("az-active");
   $sledeceDugme.addClass("az-active");
   setTimeout(slajderAnimacija, 4000);
+}
+
+function formaPlugin() {
+  jQuery.validator.setDefaults({
+    debug: true,
+    success: "valid"
+  });
+  var inp = document.querySelectorAll("input");
+  var lab = document.querySelectorAll("label");
+  prikazForme(inp, lab);
+  var form = $('#konForm');
+  var validatorAz = form.validate({
+    rules: {
+      inputIme: {
+        required: true,
+        minlength: 3
+      },
+      inputPrezime: {
+        required: true,
+        minlength: 3
+      },
+      inputEmail: {
+        required: true,
+        email: true
+      },
+      txtOblast: {
+        required: true
+      }
+    },
+    success: function success(label) {
+      label.text('').addClass('valid');
+    }
+  });
+  var bool;
+  $(".col-12 > button").click(function () {
+    bool = form.valid();
+    var poruka = $("#porukaGreska");
+    var txtObl = document.querySelector("textarea");
+    brisiPoruke(validatorAz);
+
+    if (txtObl.value.length) {
+      txtObl.nextElementSibling.innerHTML = '';
+    }
+
+    if (!bool) {
+      poruka.removeClass("az-invisible");
+      console.log(poruka);
+      poruka.html("Niste popunili sva polja ispravno !");
+      poruka.removeClass('text-success');
+      poruka.addClass('az-red');
+    } else {
+      poruka.removeClass("az-invisible");
+      poruka.html("Sve je ispravno popunjeno poruka je poslata!");
+      poruka.removeClass('az-red');
+      poruka.addClass('text-success');
+      $("label.error").text('');
+      inp.forEach(function (element) {
+        element.value = '';
+      });
+      txtObl.value = '';
+    }
+  });
+  inp.forEach(function (elem) {
+    elem.addEventListener('focus', function () {
+      brisiPoruke(validatorAz);
+    });
+  });
+}
+
+function brisiPoruke(pom) {
+  pom.showErrors({
+    inputIme: "",
+    inputEmail: "",
+    inputPrezime: "",
+    txtOblast: "Morate ostaviti poruku koju prosleđujete!"
+  });
+}
+
+function prikazImenaStrane() {
+  var prikazStrane = document.querySelectorAll("#naslovna span");
+  prikazStrane.forEach(function (elem) {
+    elem.innerText = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf(".")).toLowerCase();
+  });
 }

@@ -22,31 +22,26 @@ let url = window.location.pathname;
 url = (url=='/BakinoCudoDoo/')?'/BakinoCudoDoo/index.html':url;
 // console.log(url);
 window.onload = function(){
-
-
-
-    
     if(url=='/BakinoCudoDoo/index.html'){
-        // console.log("RADI");
-        
-//Konstante za slajeder
-const slajderObj = document.querySelector("#carouselSliderIndicators");
-const slajderNizSlike = [`${prefiksOnline+prefiksSlike}slanaJela.jpg`,`${prefiksOnline+prefiksSlike}cokolodnaTorta.jpg`,`${prefiksOnline+prefiksSlike}rakijaViseFlasa.jpg`];
-const slajderAltSlike = ['slano posluzenje','čokolodna torta','flaše rakije raznih ukusa'];
+                
+        //Konstante za slajeder
+        const slajderObj = document.querySelector("#carouselSliderIndicators");
+        const slajderNizSlike = [`${prefiksOnline+prefiksSlike}slanaJela.jpg`,`${prefiksOnline+prefiksSlike}cokolodnaTorta.jpg`,`${prefiksOnline+prefiksSlike}rakijaViseFlasa.jpg`];
+        const slajderAltSlike = ['slano posluzenje','čokolodna torta','flaše rakije raznih ukusa'];
 
-//Konstante za prednostiBlok
-const prednostiBlok = document.querySelector("#blokPrednosti");
-var prednostiObj = []
-prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}svezeNamirnice.jpg`,slikaAlt:'Sveze namirnice',naslov:'Sveže namirnice',tekst:'Namirnice koje koristimo su isključivo od naših sigurnih partnera.',faIcon:'carrot'});
-prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}brzaDostava.jpg`,slikaAlt:'Brza Dostava',naslov:'Brza dostava',tekst:'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',faIcon:'clock'});
-prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}raznovrsnaHrana.jpg`,slikaAlt:'Raznovrsna hrana',naslov:'Raznovrsna jela',tekst:'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',faIcon:'bowl-food'});
-prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}velikoIskustvo.jpg`,slikaAlt:'Veliko iskustvo',naslov:'Veliko iskustvo',tekst:'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',faIcon:'star'});
-
+        //Konstante za prednostiBlok
+        const prednostiBlok = document.querySelector("#blokPrednosti");
+        var prednostiObj = []
+        prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}svezeNamirnice.jpg`,slikaAlt:'Sveze namirnice',naslov:'Sveže namirnice',tekst:'Namirnice koje koristimo su isključivo od naših sigurnih partnera.',faIcon:'carrot'});
+        prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}brzaDostava.jpg`,slikaAlt:'Brza Dostava',naslov:'Brza dostava',tekst:'Naši dostavljači su brzi i vešti da dostave hranu gde god je potrebno.',faIcon:'clock'});
+        prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}raznovrsnaHrana.jpg`,slikaAlt:'Raznovrsna hrana',naslov:'Raznovrsna jela',tekst:'Imamo raznovrsan jelovnik, kako bi svako pronašao obrok za sebe.',faIcon:'bowl-food'});
+        prednostiObj.push({slikaSrc:`${prefiksOnline+prefiksSlike}velikoIskustvo.jpg`,slikaAlt:'Veliko iskustvo',naslov:'Veliko iskustvo',tekst:'Naša ekipa radi kompaktno i gotovo bez greške dugi niz godina.',faIcon:'star'});
 
 
-//Komentari
-const naslovKomentara = document.querySelectorAll("#Komentari div.col-12.text-center");
-var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno dobijamo komentare i ovde možete videti šta ljudi koji su probali naše specijalitete misle o njima."}];
+
+        //Komentari
+        const naslovKomentara = document.querySelectorAll("#Komentari div.col-12.text-center");
+        var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno dobijamo komentare i ovde možete videti šta ljudi koji su probali naše specijalitete misle o njima."}];
         //Slajder
             const $nizSlajderDugmica = $('button[data-az-slide]');
             slajderDugmici($nizSlajderDugmica);
@@ -76,52 +71,10 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
             komentariObj.push({ime:"Srđan Janketić",posao:"Vlasnik vrtića",datum:'13.3.2022.',opis:`Dugo godina je moja ekipa tragala za dobrim keteringom koji nudi raznovrsnu hranu za sve mališane. Jedino je <span class="fw-bold">Keternig "Bakino Čudo"</span> uspeo da nas zadovolji kvalitetom i brzinom njihovih vozača.`,link:"komentariVlasnik.jpg",alt:"čovek vlasnik vrtića",ocena:5});
         //Forma rezervacije
             const formaObj = document.querySelector("#kontaktForm");
-            const formaSelect = document.querySelector("select");
-            var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
             var inputFormObjects = formaObj.querySelectorAll(`input[type='text'],input[type='email']`);
             var labelFormObjects = formaObj.querySelectorAll("label");
             var formDugme = formaObj.querySelector("#dugmeProvera");
-            formaSelect.addEventListener('change',function(){
-                let pom = Number(formaSelect.value);
-                // console.log(pom);
-                if(pom){
-                    formaSelect.previousElementSibling.classList.remove("text-danger"); 
-                    formaSelect.previousElementSibling.classList.add("text-success");
-                    formaSelect.classList.remove("az-form-border");
-                    prikazCheckBoxova(pom);
-                    divCbx[0].previousElementSibling.classList.remove("az-invisible");
-                    divCbx[0].classList.remove('az-invisible');
-                     divCbx[1].classList.remove('az-invisible');
-                     
-                    divCbx.forEach((elem) =>{
-                        let p = elem.querySelectorAll("input[type='checkbox']");
-                        p.forEach(elem => nizCboxa.push(elem));
-                     });
-                 }else{
-                     formaSelect.previousElementSibling.classList.add("text-danger");
-                     formaSelect.previousElementSibling.classList.remove("text-success");
-                     formaSelect.classList.add("az-form-border");
-                     divCbx[0].previousElementSibling.classList.add("az-invisible");
-                     divCbx[0].classList.add('az-invisible');
-                     divCbx[1].classList.add('az-invisible');
-                     divCbx[1].nextElementSibling.classList.add("az-invisible");
-                 }
-            })
-            
-            inputFormObjects.forEach(function(element){
-                element.addEventListener('keyup',function(){
-                if(!element.value.length){
-                    bool = false;
-                    element.classList.add("az-form-border");
-                    element.nextElementSibling.nextElementSibling.innerHTML = 'Niste popunili polje';
-                    element.nextElementSibling.nextElementSibling.classList.remove('az-invisible');
-                }else{
-                    element.classList.remove("az-form-border");
-                    element.nextElementSibling.nextElementSibling.classList.add('az-invisible');
-                    proveriElem(element);
-                }
-                
-            })});
+            proveraFormeUzivo();
             formDugme.addEventListener("click",proveraForme);
 
         slajderSlike(slajderObj,slajderAltSlike,slajderNizSlike);
@@ -201,89 +154,53 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
 
 
 };
-function formaPlugin(){
-    jQuery.validator.setDefaults({
-        debug: true,
-        success: "valid"
-      });
-    let inp = document.querySelectorAll("input");
-    let lab = document.querySelectorAll("label");
-    prikazForme(inp,lab);
-    let form = $('#konForm');
-    var validatorAz = form.validate({
-        rules:{
-            inputIme: {
-                required: true,
-                minlength: 3
-            },
-            inputPrezime: {
-                required: true,
-                minlength: 3
-            },
-            inputEmail:{
-                required: true,
-                email:true
-            },
-            txtOblast:{
-                required:true
-            }
-        },
-        success: function(label){
-            label.text('').addClass('valid');
-        }
-        });
-    let bool;
-    $(".col-12 > button").click(function(){
-        
-            bool=form.valid();
-            let poruka = $("#porukaGreska");
-            let txtObl = document.querySelector("textarea");
-            brisiPoruke(validatorAz);
 
-            if(txtObl.value.length){
-                txtObl.nextElementSibling.innerHTML = '';
-            }
-            if(!bool){
-                poruka.removeClass("az-invisible")
-                console.log(poruka);
-                poruka.html("Niste popunili sva polja ispravno !");
-                poruka.removeClass('text-success');
-                poruka.addClass('az-red');
-            }else{
-                poruka.removeClass("az-invisible")
-                poruka.html("Sve je ispravno popunjeno poruka je poslata!");
-                poruka.removeClass('az-red');
-                poruka.addClass('text-success');
-                $("label.error").text('');
-                inp.forEach((element) =>{
-                    element.value = '';
-                });
-                txtObl.value = '';
-            }
-        });
-        inp.forEach(elem=>{
-            elem.addEventListener('focus',function(){
-                brisiPoruke(validatorAz);
-            })
-        })
-}
-function brisiPoruke(pom){
-    pom.showErrors({
-        inputIme:"",
-        inputEmail:"",
-        inputPrezime:"",
-        txtOblast:"Morate ostaviti poruku koju prosleđujete!"
-      })
-}
-function prikazImenaStrane(){
-    var prikazStrane = document.querySelectorAll("#naslovna span");
-    prikazStrane.forEach(function(elem){
-        elem.innerText=url.substring(url.lastIndexOf('/')+1,url.lastIndexOf(".")).toLowerCase();
-    });
+function proveraFormeUzivo(){
+    const formaSelect = document.querySelector("select");
+    var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
+    formaSelect.addEventListener('change',function(){
+        let pom = Number(formaSelect.value);
+        // console.log(pom);
+        if(pom){
+            formaSelect.previousElementSibling.classList.remove("text-danger"); 
+            formaSelect.previousElementSibling.classList.add("text-success");
+            formaSelect.classList.remove("az-form-border");
+            prikazCheckBoxova(pom);
+            divCbx[0].previousElementSibling.classList.remove("az-invisible");
+            divCbx[0].classList.remove('az-invisible');
+             divCbx[1].classList.remove('az-invisible');
+             
+            divCbx.forEach((elem) =>{
+                let p = elem.querySelectorAll("input[type='checkbox']");
+                p.forEach(elem => nizCboxa.push(elem));
+             });
+         }else{
+             formaSelect.previousElementSibling.classList.add("text-danger");
+             formaSelect.previousElementSibling.classList.remove("text-success");
+             formaSelect.classList.add("az-form-border");
+             divCbx[0].previousElementSibling.classList.add("az-invisible");
+             divCbx[0].classList.add('az-invisible');
+             divCbx[1].classList.add('az-invisible');
+             divCbx[1].nextElementSibling.classList.add("az-invisible");
+         }
+    })
+    
+    inputFormObjects.forEach(function(element){
+        element.addEventListener('keyup',function(){
+        if(!element.value.length){
+            bool = false;
+            element.classList.add("az-form-border");
+            element.nextElementSibling.nextElementSibling.innerHTML = 'Niste popunili polje';
+            element.nextElementSibling.nextElementSibling.classList.remove('az-invisible');
+        }else{
+            element.classList.remove("az-form-border");
+            element.nextElementSibling.nextElementSibling.classList.add('az-invisible');
+            proveriElem(element);
+        }
+        
+    })});
 }
 function zavrsiLoadScreen(){
-    // $(".loader-wrapper").fadeOut("slow");
-    // $("#load-screen").animate({"opacity":"0"});
     $("#load-screen").addClass("az-anim-opac");
     $(bodyTag).addClass("az-body-visi");
     setTimeout(function(){$("#load-screen").addClass("az-load-del")},1150);
@@ -633,4 +550,85 @@ function slajderAnimacija(){
     $trenutnoDugme.removeClass("az-active")
     $sledeceDugme.addClass("az-active");
     setTimeout(slajderAnimacija,4000);
+}
+
+function formaPlugin(){
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+      });
+    let inp = document.querySelectorAll("input");
+    let lab = document.querySelectorAll("label");
+    prikazForme(inp,lab);
+    let form = $('#konForm');
+    var validatorAz = form.validate({
+        rules:{
+            inputIme: {
+                required: true,
+                minlength: 3
+            },
+            inputPrezime: {
+                required: true,
+                minlength: 3
+            },
+            inputEmail:{
+                required: true,
+                email:true
+            },
+            txtOblast:{
+                required:true
+            }
+        },
+        success: function(label){
+            label.text('').addClass('valid');
+        }
+        });
+    let bool;
+    $(".col-12 > button").click(function(){
+        
+            bool=form.valid();
+            let poruka = $("#porukaGreska");
+            let txtObl = document.querySelector("textarea");
+            brisiPoruke(validatorAz);
+
+            if(txtObl.value.length){
+                txtObl.nextElementSibling.innerHTML = '';
+            }
+            if(!bool){
+                poruka.removeClass("az-invisible")
+                console.log(poruka);
+                poruka.html("Niste popunili sva polja ispravno !");
+                poruka.removeClass('text-success');
+                poruka.addClass('az-red');
+            }else{
+                poruka.removeClass("az-invisible")
+                poruka.html("Sve je ispravno popunjeno poruka je poslata!");
+                poruka.removeClass('az-red');
+                poruka.addClass('text-success');
+                $("label.error").text('');
+                inp.forEach((element) =>{
+                    element.value = '';
+                });
+                txtObl.value = '';
+            }
+        });
+        inp.forEach(elem=>{
+            elem.addEventListener('focus',function(){
+                brisiPoruke(validatorAz);
+            })
+        })
+}
+function brisiPoruke(pom){
+    pom.showErrors({
+        inputIme:"",
+        inputEmail:"",
+        inputPrezime:"",
+        txtOblast:"Morate ostaviti poruku koju prosleđujete!"
+      })
+}
+function prikazImenaStrane(){
+    var prikazStrane = document.querySelectorAll("#naslovna span");
+    prikazStrane.forEach(function(elem){
+        elem.innerText=url.substring(url.lastIndexOf('/')+1,url.lastIndexOf(".")).toLowerCase();
+    });
 }
