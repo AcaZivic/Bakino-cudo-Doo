@@ -206,14 +206,10 @@ window.onload = function () {
     prikazForme(inputFormObjects, labelFormObjects);
   } else {
     prefiksPomocno = "../";
-    var prikazStrane = document.querySelectorAll("#naslovna span");
+    prikazImenaStrane();
   }
 
-  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
-    prikazStrane.forEach(function (elem) {
-      elem.innerText = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf(".")).toLowerCase();
-    });
-  }
+  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {}
 
   if (url == "".concat(prefiksOnline, "pages/saveti.html")) {}
 
@@ -263,6 +259,13 @@ window.onload = function () {
   }, 2300);
   setTimeout(slajderAnimacija, 4500);
 };
+
+function prikazImenaStrane() {
+  var prikazStrane = document.querySelectorAll("#naslovna span");
+  prikazStrane.forEach(function (elem) {
+    elem.innerText = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf(".")).toLowerCase();
+  });
+}
 
 function zavrsiLoadScreen() {
   // $(".loader-wrapper").fadeOut("slow");

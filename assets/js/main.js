@@ -134,12 +134,10 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         prikazForme(inputFormObjects,labelFormObjects);
     }else{
         prefiksPomocno = `../`;
-        var prikazStrane = document.querySelectorAll("#naslovna span");
+        prikazImenaStrane();
     }
     if(url==`${prefiksOnline}pages/usluge.html`){
-        prikazStrane.forEach(function(elem){
-            elem.innerText=url.substring(url.lastIndexOf('/')+1,url.lastIndexOf(".")).toLowerCase();
-        });
+        
     }
 
     if(url==`${prefiksOnline}pages/saveti.html`){
@@ -175,8 +173,15 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
     setTimeout(zavrsiLoadScreen,1300);
     setTimeout(()=>$("#load-screen").remove(),2300);
     setTimeout(slajderAnimacija,4500);
-};
 
+
+};
+function prikazImenaStrane(){
+    var prikazStrane = document.querySelectorAll("#naslovna span");
+    prikazStrane.forEach(function(elem){
+        elem.innerText=url.substring(url.lastIndexOf('/')+1,url.lastIndexOf(".")).toLowerCase();
+    });
+}
 function zavrsiLoadScreen(){
     // $(".loader-wrapper").fadeOut("slow");
     // $("#load-screen").animate({"opacity":"0"});
@@ -420,7 +425,7 @@ function proveraForme(){
                 element.value = '';
         });
         selectFormObject.selectedIndex = 0;
-        
+
 
     }else{
         this.previousElementSibling.classList.add("az-red")
