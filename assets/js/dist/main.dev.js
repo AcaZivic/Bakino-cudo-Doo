@@ -541,6 +541,7 @@ function proveraForme() {
     selectFormObject.selectedIndex = 0;
     selectFormObject.previousElementSibling.classList.add("text-danger");
     selectFormObject.previousElementSibling.classList.remove("text-success");
+    selectFormObject.classList.remove("az-form-border");
     var divCbx = document.querySelectorAll(".form-floating.col-md-12 > .row");
     divCbx[0].previousElementSibling.classList.add("az-invisible");
     divCbx[0].classList.add('az-invisible');
