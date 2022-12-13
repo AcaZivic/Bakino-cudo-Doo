@@ -134,22 +134,23 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         prikazForme(inputFormObjects,labelFormObjects);
     }else{
         prefiksPomocno = `../`;
-        // prefiksPage= `..`+prefiksPage;
-        // console.log(prefiksPage);
+        var prikazStrane = document.querySelectorAll("#naslovna span");
     }
-    if(url=='/BakinoCudoDoo/pages/usluge.html'){
-        
+    if(url==`${prefiksOnline}pages/usluge.html`){
+        prikazStrane.forEach(function(elem){
+            elem.innerText=url.substring(url.lastIndexOf('/')).toUpperCase();
+        });
     }
 
-    if(url=='/pages/saveti.html'){
+    if(url==`${prefiksOnline}pages/saveti.html`){
+        "pera".last
+    }
+    
+    if(url==`${prefiksOnline}pages/kontakt.html`){
         
     }
     
-    if(url=='/pages/kontakt.html'){
-        
-    }
-    
-    if(url=='/pages/autor.html'){
+    if(url==`${prefiksOnline}pages/autor.html`){
         
     }
     //Konstante za footer

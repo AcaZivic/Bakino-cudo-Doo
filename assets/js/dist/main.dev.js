@@ -205,17 +205,23 @@ window.onload = function () {
     ispisKomentara(komentariObj, nizKomentara);
     prikazForme(inputFormObjects, labelFormObjects);
   } else {
-    prefiksPomocno = "../"; // prefiksPage= `..`+prefiksPage;
-    // console.log(prefiksPage);
+    prefiksPomocno = "../";
+    var prikazStrane = document.querySelectorAll("#naslovna span");
   }
 
-  if (url == '/BakinoCudoDoo/pages/usluge.html') {}
+  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
+    prikazStrane.forEach(function (elem) {
+      elem.innerText = url.substring(url.lastIndexOf('/')).toUpperCase();
+    });
+  }
 
-  if (url == '/pages/saveti.html') {}
+  if (url == "".concat(prefiksOnline, "pages/saveti.html")) {
+    "pera".last;
+  }
 
-  if (url == '/pages/kontakt.html') {}
+  if (url == "".concat(prefiksOnline, "pages/kontakt.html")) {}
 
-  if (url == '/pages/autor.html') {} //Konstante za footer
+  if (url == "".concat(prefiksOnline, "pages/autor.html")) {} //Konstante za footer
 
 
   var footerIconObjects = [];
