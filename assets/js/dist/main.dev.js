@@ -209,11 +209,47 @@ window.onload = function () {
     prikazImenaStrane();
   }
 
-  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {}
+  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
+    var buttonObj = document.querySelectorAll('.card-body > button');
+    buttonObj.forEach(function (elem) {
+      elem.addEventListener('click', function () {
+        $(this).next().addClass("az-visible");
+        $(this).next().animate({
+          opacity: "1"
+        }, 500);
+        $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
+      });
+    });
+    var buttonIks = document.querySelectorAll(".modal-header > button,.modal-footer > button");
+    buttonIks.forEach(function (elem) {
+      elem.addEventListener("click", function () {
+        var $p = $(this).parent().parent().parent().parent();
+        $p.animate({
+          opacity: "0"
+        }, 500);
+        setTimeout(function () {
+          $($p).removeClass("az-visible");
+        }, 500);
+        $('#pozadinaModal').remove();
+      });
+    });
+  } //${prefiksOnline}
 
-  if (url == "".concat(prefiksOnline, "pages/saveti.html")) {}
 
-  if (url == "".concat(prefiksOnline, "pages/kontakt.html")) {}
+  if (url == "".concat(prefiksOnline, "pages/meni.html")) {
+    var p = document.querySelector(".row.text-center > button");
+    p.addEventListener("click", function () {
+      p.parentElement.previousElementSibling.classList.toggle("az-invisible");
+      if (p.innerText == 'Vidi više') p.innerText = "Vidi manje";
+    });
+  }
+
+  if (url == "".concat(prefiksOnline, "pages/saveti.html")) {} //${prefiksOnline}
+
+
+  if (url == "".concat(prefiksOnline, "pages/kontakt.html")) {
+    formaPlugin();
+  }
 
   if (url == "".concat(prefiksOnline, "pages/autor.html")) {} //Konstante za footer
 
@@ -259,6 +295,82 @@ window.onload = function () {
   }, 2300);
   setTimeout(slajderAnimacija, 4500);
 };
+
+function formaPlugin() {
+  jQuery.validator.setDefaults({
+    debug: true,
+    success: "valid"
+  });
+  var inp = document.querySelectorAll("input");
+  var lab = document.querySelectorAll("label");
+  prikazForme(inp, lab);
+  var form = $('#konForm');
+  var validatorAz = form.validate({
+    rules: {
+      inputIme: {
+        required: true,
+        minlength: 3
+      },
+      inputPrezime: {
+        required: true,
+        minlength: 3
+      },
+      inputEmail: {
+        required: true,
+        email: true
+      },
+      txtOblast: {
+        required: true
+      }
+    },
+    success: function success(label) {
+      label.text('').addClass('valid');
+    }
+  });
+  var bool;
+  $(".col-12 > button").click(function () {
+    bool = form.valid();
+    var poruka = $("#porukaGreska");
+    var txtObl = document.querySelector("textarea");
+    brisiPoruke(validatorAz);
+
+    if (txtObl.value.length) {
+      txtObl.nextElementSibling.innerHTML = '';
+    }
+
+    if (!bool) {
+      poruka.removeClass("az-invisible");
+      console.log(poruka);
+      poruka.html("Niste popunili sva polja ispravno !");
+      poruka.removeClass('text-success');
+      poruka.addClass('az-red');
+    } else {
+      poruka.removeClass("az-invisible");
+      poruka.html("Sve je ispravno popunjeno poruka je poslata!");
+      poruka.removeClass('az-red');
+      poruka.addClass('text-success');
+      $("label.error").text('');
+      inp.forEach(function (element) {
+        element.value = '';
+      });
+      txtObl.value = '';
+    }
+  });
+  inp.forEach(function (elem) {
+    elem.addEventListener('focus', function () {
+      brisiPoruke(validatorAz);
+    });
+  });
+}
+
+function brisiPoruke(pom) {
+  pom.showErrors({
+    inputIme: "",
+    inputEmail: "",
+    inputPrezime: "",
+    txtOblast: "Morate ostaviti poruku koju prosleđujete!"
+  });
+}
 
 function prikazImenaStrane() {
   var prikazStrane = document.querySelectorAll("#naslovna span");

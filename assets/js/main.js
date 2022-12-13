@@ -137,17 +137,42 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
         prikazImenaStrane();
     }
     if(url==`${prefiksOnline}pages/usluge.html`){
-        
+        let buttonObj = document.querySelectorAll('.card-body > button');
+        buttonObj.forEach(elem =>{
+            
+            elem.addEventListener('click',function(){
+                $(this).next().addClass("az-visible");
+                $(this).next().animate({opacity:"1"},500);
+                $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
+            });
+        });
+        let buttonIks = document.querySelectorAll(`.modal-header > button,.modal-footer > button`);
+        buttonIks.forEach(elem=>{
+            elem.addEventListener("click",function(){
+                let $p = $(this).parent().parent().parent().parent();
+                $p.animate({opacity:"0"},500);
+                setTimeout(function(){$($p).removeClass("az-visible");},500);
+                $('#pozadinaModal').remove();
+            })
+        })
     }
-
+//${prefiksOnline}
+    if(url==`${prefiksOnline}pages/meni.html`){
+        let p = document.querySelector(".row.text-center > button");
+        p.addEventListener("click",function(){
+            p.parentElement.previousElementSibling.classList.toggle("az-invisible");
+            if(p.innerText == 'Vidi više') p.innerText = "Vidi manje";
+        })
+        
+    
+    }
     if(url==`${prefiksOnline}pages/saveti.html`){
-        
     }
-    
+    //${prefiksOnline}
     if(url==`${prefiksOnline}pages/kontakt.html`){
+        formaPlugin();
         
     }
-    
     if(url==`${prefiksOnline}pages/autor.html`){
         
     }
@@ -176,6 +201,80 @@ var komentariNaslovObj = [{naslov:"Komentari posetilaca",oznaka:``,opis:"Stalno 
 
 
 };
+function formaPlugin(){
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+      });
+    let inp = document.querySelectorAll("input");
+    let lab = document.querySelectorAll("label");
+    prikazForme(inp,lab);
+    let form = $('#konForm');
+    var validatorAz = form.validate({
+        rules:{
+            inputIme: {
+                required: true,
+                minlength: 3
+            },
+            inputPrezime: {
+                required: true,
+                minlength: 3
+            },
+            inputEmail:{
+                required: true,
+                email:true
+            },
+            txtOblast:{
+                required:true
+            }
+        },
+        success: function(label){
+            label.text('').addClass('valid');
+        }
+        });
+    let bool;
+    $(".col-12 > button").click(function(){
+        
+            bool=form.valid();
+            let poruka = $("#porukaGreska");
+            let txtObl = document.querySelector("textarea");
+            brisiPoruke(validatorAz);
+
+            if(txtObl.value.length){
+                txtObl.nextElementSibling.innerHTML = '';
+            }
+            if(!bool){
+                poruka.removeClass("az-invisible")
+                console.log(poruka);
+                poruka.html("Niste popunili sva polja ispravno !");
+                poruka.removeClass('text-success');
+                poruka.addClass('az-red');
+            }else{
+                poruka.removeClass("az-invisible")
+                poruka.html("Sve je ispravno popunjeno poruka je poslata!");
+                poruka.removeClass('az-red');
+                poruka.addClass('text-success');
+                $("label.error").text('');
+                inp.forEach((element) =>{
+                    element.value = '';
+                });
+                txtObl.value = '';
+            }
+        });
+        inp.forEach(elem=>{
+            elem.addEventListener('focus',function(){
+                brisiPoruke(validatorAz);
+            })
+        })
+}
+function brisiPoruke(pom){
+    pom.showErrors({
+        inputIme:"",
+        inputEmail:"",
+        inputPrezime:"",
+        txtOblast:"Morate ostaviti poruku koju prosleđujete!"
+      })
+}
 function prikazImenaStrane(){
     var prikazStrane = document.querySelectorAll("#naslovna span");
     prikazStrane.forEach(function(elem){
