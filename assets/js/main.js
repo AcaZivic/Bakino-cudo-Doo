@@ -87,24 +87,7 @@ window.onload = function(){
         prikazImenaStrane();
     }
     if(url==`${prefiksOnline}pages/usluge.html`){
-        let buttonObj = document.querySelectorAll('.card-body > button');
-        buttonObj.forEach(elem =>{
-            
-            elem.addEventListener('click',function(){
-                $(this).next().addClass("az-visible");
-                $(this).next().animate({opacity:"1"},500);
-                $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
-            });
-        });
-        let buttonIks = document.querySelectorAll(`.modal-header > button,.modal-footer > button`);
-        buttonIks.forEach(elem=>{
-            elem.addEventListener("click",function(){
-                let $p = $(this).parent().parent().parent().parent();
-                $p.animate({opacity:"0"},500);
-                setTimeout(function(){$($p).removeClass("az-visible");},500);
-                $('#pozadinaModal').remove();
-            })
-        })
+        funkModal();
     }
 //${prefiksOnline}
     if(url==`${prefiksOnline}pages/meni.html`){
@@ -548,7 +531,26 @@ function slajderAnimacija(){
     $sledeceDugme.addClass("az-active");
     setTimeout(slajderAnimacija,4000);
 }
-
+function funkModal(){
+    let buttonObj = document.querySelectorAll('.card-body > button');
+        buttonObj.forEach(elem =>{
+            
+            elem.addEventListener('click',function(){
+                $(this).next().addClass("az-visible");
+                $(this).next().animate({opacity:"1"},500);
+                $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
+            });
+        });
+        let buttonIks = document.querySelectorAll(`.modal-header > button,.modal-footer > button`);
+        buttonIks.forEach(elem=>{
+            elem.addEventListener("click",function(){
+                let $p = $(this).parent().parent().parent().parent();
+                $p.animate({opacity:"0"},500);
+                setTimeout(function(){$($p).removeClass("az-visible");},500);
+                $('#pozadinaModal').remove();
+            })
+        })
+}
 function formaPlugin(){
     jQuery.validator.setDefaults({
         debug: true,

@@ -167,29 +167,7 @@ window.onload = function () {
   }
 
   if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
-    var buttonObj = document.querySelectorAll('.card-body > button');
-    buttonObj.forEach(function (elem) {
-      elem.addEventListener('click', function () {
-        $(this).next().addClass("az-visible");
-        $(this).next().animate({
-          opacity: "1"
-        }, 500);
-        $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
-      });
-    });
-    var buttonIks = document.querySelectorAll(".modal-header > button,.modal-footer > button");
-    buttonIks.forEach(function (elem) {
-      elem.addEventListener("click", function () {
-        var $p = $(this).parent().parent().parent().parent();
-        $p.animate({
-          opacity: "0"
-        }, 500);
-        setTimeout(function () {
-          $($p).removeClass("az-visible");
-        }, 500);
-        $('#pozadinaModal').remove();
-      });
-    });
+    funkModal();
   } //${prefiksOnline}
 
 
@@ -700,6 +678,32 @@ function slajderAnimacija() {
   $trenutnoDugme.removeClass("az-active");
   $sledeceDugme.addClass("az-active");
   setTimeout(slajderAnimacija, 4000);
+}
+
+function funkModal() {
+  var buttonObj = document.querySelectorAll('.card-body > button');
+  buttonObj.forEach(function (elem) {
+    elem.addEventListener('click', function () {
+      $(this).next().addClass("az-visible");
+      $(this).next().animate({
+        opacity: "1"
+      }, 500);
+      $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
+    });
+  });
+  var buttonIks = document.querySelectorAll(".modal-header > button,.modal-footer > button");
+  buttonIks.forEach(function (elem) {
+    elem.addEventListener("click", function () {
+      var $p = $(this).parent().parent().parent().parent();
+      $p.animate({
+        opacity: "0"
+      }, 500);
+      setTimeout(function () {
+        $($p).removeClass("az-visible");
+      }, 500);
+      $('#pozadinaModal').remove();
+    });
+  });
 }
 
 function formaPlugin() {

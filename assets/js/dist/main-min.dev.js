@@ -361,27 +361,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
     }], s), ispisSaveta(c, d), ispisKomentara(v, u), prikazForme(m, k);
   } else prefiksPomocno = "../", prikazImenaStrane();
 
-  if (url == "".concat(prefiksOnline, "pages/usluge.html")) {
-    document.querySelectorAll(".card-body > button").forEach(function (e) {
-      e.addEventListener("click", function () {
-        $(this).next().addClass("az-visible"), $(this).next().animate({
-          opacity: "1"
-        }, 500), $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
-      });
-    });
-    document.querySelectorAll(".modal-header > button,.modal-footer > button").forEach(function (e) {
-      e.addEventListener("click", function () {
-        var e = $(this).parent().parent().parent().parent();
-        e.animate({
-          opacity: "0"
-        }, 500), setTimeout(function () {
-          $(e).removeClass("az-visible");
-        }, 500), $("#pozadinaModal").remove();
-      });
-    });
-  }
-
-  if (url == "".concat(prefiksOnline, "pages/meni.html")) {
+  if (url == "".concat(prefiksOnline, "pages/usluge.html") && funkModal(), url == "".concat(prefiksOnline, "pages/meni.html")) {
     var b = document.querySelector(".row.text-center > button");
     b.addEventListener("click", function () {
       b.parentElement.previousElementSibling.classList.toggle("az-invisible"), "Vidi više" == b.innerText && (b.innerText = "Vidi manje");
@@ -435,6 +415,26 @@ function slajderAnimacija() {
   var a = $("#carouselSliderIndicators button").filter("button[data-az-slide = ".concat(brAk, "]")),
       t = a.next().length ? a.next() : a.parent().children(":first");
   brAk = brAk < 2 ? ++brAk : 0, a.removeClass("az-active"), t.addClass("az-active"), setTimeout(slajderAnimacija, 4e3);
+}
+
+function funkModal() {
+  document.querySelectorAll(".card-body > button").forEach(function (e) {
+    e.addEventListener("click", function () {
+      $(this).next().addClass("az-visible"), $(this).next().animate({
+        opacity: "1"
+      }, 500), $('<div id="pozadinaModal" class="modal-backdrop fade show"></div>').appendTo($("body"));
+    });
+  });
+  document.querySelectorAll(".modal-header > button,.modal-footer > button").forEach(function (e) {
+    e.addEventListener("click", function () {
+      var e = $(this).parent().parent().parent().parent();
+      e.animate({
+        opacity: "0"
+      }, 500), setTimeout(function () {
+        $(e).removeClass("az-visible");
+      }, 500), $("#pozadinaModal").remove();
+    });
+  });
 }
 
 function formaPlugin() {
