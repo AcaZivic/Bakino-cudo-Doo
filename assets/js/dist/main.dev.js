@@ -746,9 +746,12 @@ function formaPlugin() {
   });
   var bool;
   $(".col-12 > button").click(function () {
-    bool = proveriElem(inp[0]);
-    bool = proveriElem(inp[1]);
     bool = form.valid();
+
+    if (bool) {
+      if (!proveriElem(inp[0]) || !proveriElem(inp[1])) bool = false;
+    }
+
     var poruka = $("#porukaGreska");
     var txtObl = document.querySelector("textarea");
     brisiPoruke(validatorAz);
@@ -758,8 +761,8 @@ function formaPlugin() {
     }
 
     if (!bool) {
-      poruka.removeClass("az-invisible");
-      console.log(poruka);
+      poruka.removeClass("az-invisible"); // console.log(poruka);
+
       poruka.html("Niste popunili sva polja ispravno !");
       poruka.removeClass('text-success');
       poruka.addClass('az-red');
