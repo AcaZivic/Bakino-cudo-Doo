@@ -595,11 +595,11 @@ function proveriElem(element) {
   if (!provera) {
     bool = false;
     element.classList.add("az-form-border");
-    element.nextElementSibling.nextElementSibling.classList.remove('az-invisible');
-    element.nextElementSibling.nextElementSibling.innerHTML = 'Niste popunili polje u trazenom formatu';
+    element.parentElement.lastElementChild.classList.remove('az-invisible');
+    element.parentElement.lastElementChild.innerHTML = 'Niste popunili polje u trazenom formatu';
   } else {
     element.classList.remove("az-form-border");
-    element.nextElementSibling.nextElementSibling.classList.add('az-invisible');
+    element.parentElement.lastElementChild.classList.add('az-invisible');
   }
 
   return bool;
