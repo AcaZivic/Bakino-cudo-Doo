@@ -220,7 +220,7 @@ function proveraForme() {
 function proveriElem(e) {
   var i = !0,
       a = !0;
-  return e.id.match(/input(?=(Ime|Prezime))/) && (i = /^([A-ZČĆŽŠĐ][a-zčćžšđ]{2,})(\s[A-ZČĆŽŠĐ][a-zčćžšđ]{2,})*$/.test(e.value)), "inputEmail" == e.id && (i = /^[\w\_]{3,}\@[a-z]{3,}\.[a-z]{2,3}$/.test(e.value)), "inputTelefon" == e.id && (i = /^(06[^7]\/[0-9]{7})|(067\/7[0-9]{6})$/.test(e.value)), i ? (e.classList.remove("az-form-border"), e.nextElementSibling.nextElementSibling.classList.add("az-invisible")) : (a = !1, e.classList.add("az-form-border"), e.nextElementSibling.nextElementSibling.classList.remove("az-invisible"), e.nextElementSibling.nextElementSibling.innerHTML = "Niste popunili polje u trazenom formatu"), a;
+  return e.id.match(/input(?=(Ime|Prezime))/) && (i = /^([A-ZČĆŽŠĐ][a-zčćžšđ]{2,})(\s[A-ZČĆŽŠĐ][a-zčćžšđ]{2,})*$/.test(e.value)), "inputEmail" == e.id && (i = /^[\w\_]{3,}\@[a-z]{3,}\.[a-z]{2,3}$/.test(e.value)), "inputTelefon" == e.id && (i = /^(06[^7]\/[0-9]{7})|(067\/7[0-9]{6})$/.test(e.value)), i ? (e.classList.remove("az-form-border"), e.parentElement.lastElementChild.classList.add("az-invisible")) : (a = !1, e.classList.add("az-form-border"), e.parentElement.lastElementChild.classList.remove("az-invisible"), e.parentElement.lastElementChild.innerHTML = "Niste popunili polje u trazenom formatu"), a;
 }
 
 function prikazCheckBoxova(e) {
@@ -324,8 +324,8 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
     });
     var d = document.querySelectorAll("#Usluge div.row.mt-3 div.card"),
         u = document.querySelectorAll("#Komentari .row.g-0"),
-        v = [];
-    v.push({
+        p = [];
+    p.push({
       ime: "Milorad Petrović",
       posao: "It stručnjak",
       datum: "20.2.2022.",
@@ -333,7 +333,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
       link: "komentariIT.jpg",
       alt: "čovek It stručnjak",
       ocena: 5
-    }), v.push({
+    }), p.push({
       ime: "Marija Spasić",
       posao: "Menadžer",
       datum: "22.1.2022.",
@@ -341,7 +341,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
       link: "komentariMenadzer.jpg",
       alt: "žena menadžer",
       ocena: 4
-    }), v.push({
+    }), p.push({
       ime: "Srđan Janketić",
       posao: "Vlasnik vrtića",
       datum: "13.3.2022.",
@@ -350,15 +350,15 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
       alt: "čovek vlasnik vrtića",
       ocena: 5
     });
-    var p = document.querySelector("#kontaktForm");
-    var m = p.querySelectorAll("input[type='text'],input[type='email']"),
-        k = p.querySelectorAll("label"),
-        f = p.querySelector("#dugmeProvera");
+    var v = document.querySelector("#kontaktForm");
+    var m = v.querySelectorAll("input[type='text'],input[type='email']"),
+        k = v.querySelectorAll("label"),
+        f = v.querySelector("#dugmeProvera");
     proveraFormeUzivo(m), f.addEventListener("click", proveraForme), slajderSlike(e, ["slano posluzenje", "čokolodna torta", "flaše rakije raznih ukusa"], i), prikazPrednosti(a, t), procitajVise(n), ispisSvihNaslova(r, o), ispisSvihNaslova([{
       naslov: "Komentari posetilaca",
       oznaka: "",
       opis: "Stalno dobijamo komentare i ovde možete videti šta ljudi koji su probali naše specijalitete misle o njima."
-    }], s), ispisSaveta(c, d), ispisKomentara(v, u), prikazForme(m, k);
+    }], s), ispisSaveta(c, d), ispisKomentara(p, u), prikazForme(m, k);
   } else prefiksPomocno = "../", prikazImenaStrane();
 
   if (url == "".concat(prefiksOnline, "pages/usluge.html") && funkModal(), url == "".concat(prefiksOnline, "pages/meni.html")) {
@@ -469,12 +469,12 @@ function formaPlugin() {
   });
   var t;
   $(".col-12 > button").click(function () {
-    t = i.valid();
+    (t = i.valid()) && (!proveriElem(e[0]) || !proveriElem(e[1])) && (t = !1);
     var s = $("#porukaGreska"),
         l = document.querySelector("textarea");
     brisiPoruke(a), l.value.length && (l.nextElementSibling.innerHTML = ""), t ? (s.removeClass("az-invisible"), s.html("Sve je ispravno popunjeno poruka je poslata!"), s.removeClass("az-red"), s.addClass("text-success"), $("label.error").text(""), e.forEach(function (e) {
       e.value = "";
-    }), l.value = "") : (s.removeClass("az-invisible"), console.log(s), s.html("Niste popunili sva polja ispravno !"), s.removeClass("text-success"), s.addClass("az-red"));
+    }), l.value = "") : (s.removeClass("az-invisible"), s.html("Niste popunili sva polja ispravno !"), s.removeClass("text-success"), s.addClass("az-red"));
   }), e.forEach(function (e) {
     e.addEventListener("focus", function () {
       brisiPoruke(a);
