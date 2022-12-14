@@ -364,7 +364,7 @@ url = "/BakinoCudoDoo/" == url ? "/BakinoCudoDoo/index.html" : url, window.onloa
   if (url == "".concat(prefiksOnline, "pages/usluge.html") && funkModal(), url == "".concat(prefiksOnline, "pages/meni.html")) {
     var b = document.querySelector(".row.text-center > button");
     b.addEventListener("click", function () {
-      b.parentElement.previousElementSibling.classList.toggle("az-invisible"), "Vidi više" == b.innerText && (b.innerText = "Vidi manje");
+      b.parentElement.previousElementSibling.classList.toggle("az-invisible"), "Vidi više" == b.innerText ? b.innerText = "Vidi manje" : b.innerText = "Vidi više";
     });
   }
 

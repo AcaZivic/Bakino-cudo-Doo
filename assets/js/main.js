@@ -94,7 +94,7 @@ window.onload = function(){
         let p = document.querySelector(".row.text-center > button");
         p.addEventListener("click",function(){
             p.parentElement.previousElementSibling.classList.toggle("az-invisible");
-            if(p.innerText == 'Vidi više') p.innerText = "Vidi manje";
+            if(p.innerText == 'Vidi više') {p.innerText = "Vidi manje"}else {p.innerText = "Vidi više"};
         })
         
     
@@ -585,6 +585,8 @@ function formaPlugin(){
     let bool;
     $(".col-12 > button").click(function(){
         
+            bool = proveriElem(inp[0]);
+            bool = proveriElem(inp[1]);
             bool=form.valid();
             let poruka = $("#porukaGreska");
             let txtObl = document.querySelector("textarea");
