@@ -588,9 +588,6 @@ function formaPlugin(){
             if(bool){
                 if(!proveriElem(inp[0])|| !proveriElem(inp[1])) bool = false;
             }
-            
-            
-            
             let poruka = $("#porukaGreska");
             let txtObl = document.querySelector("textarea");
             brisiPoruke(validatorAz);
